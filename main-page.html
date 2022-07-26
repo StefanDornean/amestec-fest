@@ -1,31 +1,7 @@
-<nav class="center text-center navbar navbar-expand-sm navbar-dark apply-bg-color1">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#about">Despre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#tickets">Bilete</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#artists">Line-up</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<div id="about" class="container mt-5">
-    <div class="row text-center">
-        <div class="container">
+<div id="about">
+    <div class="card">
+        <img src="./images/vizual/img13.jpg" class="card-img img-responsive" style="width:100%;" alt="Card image">
+        <div class="card-img-overlay text-center text-white">
             <h2>Despre</h2>
             <p>
                 <strong>AMESTEC</strong> , este despre spontaneitate, prietenie, muzică bună dar mai ales timp de
@@ -37,8 +13,8 @@
                 altora
                 experiențele unui AMESTEC.
             </p>
-            <button id="more-details" class="btn btn-outline-info btn-sm" style="cursor: pointer;"
-                onclick="redirectToDetails()">more</button>
+            <a route="/AMESTEC/details" class="btn btn-outline-white btn-sm text-white" style="cursor: pointer;"
+                onclick="redirectToDetails()">more</a>
         </div>
     </div>
 </div>

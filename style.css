@@ -1,11 +1,14 @@
 .apply-bg-color1{
-    background-color: #001e28;
+    background-color: #80529d;
 }
 
 .apply-color1{
-    color: #001e28;
+    color: #80529d;
 }
 
 .apply-bg-color2{
     color: #ffd3bf;
 }
+
+.maintxt {position: relative;}
+.maintxt > img, .overlay-text {position: absolute;}

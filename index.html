@@ -10,22 +10,38 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript"  src="./app.js"></script>
+    <!-- <script type="text/javascript"  src="./routing.js"></script> -->
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark apply-bg-color1">
+    <nav class="center text-center navbar navbar-expand-sm apply-color1">
         <div class="container-fluid">
-            <ul class="navbar-nav">
-                <li class="nav-item" style="cursor: pointer;">
-                    <a class="nav-link active" onclick="redirectToMain()">AMESTEC</a>
-                </li>
-            </ul>
+            <a route="/AMESTEC" class="navbar-brand" onclick="redirectToMain()">AMESTEC</a>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#about">Despre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tickets">Bilete</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#artists">Line-up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <div class="apply-bg-color1">
-        <img src="./images/img2.png" class="img-fluid" style="width: 100%;" alt="Responsive image">
+        <img src="./images/vizual/wallpaper.jpg" class="img-responsive" style="width: 100%;" alt="Responsive image">
     </div>
 
     <div id="content">
