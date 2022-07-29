@@ -56,12 +56,12 @@
 }
 
 #ticketsView{
-    margin-top: 20em;
+    margin-top: 15em;
 }
 
 @media (max-width: 768px) {
     #ticketsView{
-        margin-top: 35em;
+        margin-top: 30em;
     }
   }
 
