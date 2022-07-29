@@ -6,63 +6,153 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amestec</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./timeline.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- <script type="text/javascript"  src="./routing.js"></script> -->
 </head>
 
 <body>
-    <nav class="center text-center navbar navbar-expand-sm apply-color1">
-        <div class="container-fluid">
-            <a route="/AMESTEC" class="navbar-brand" onclick="redirectToMain()">AMESTEC</a>
-            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#about">Despre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tickets">Bilete</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#artists">Line-up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
+
+    <div class="masthead">
+        <nav class="center text-center navbar navbar-expand-sm">
+            <div class="container container-fluid ">
+                <a route="/AMESTEC" class="navbar-brand white-text-color" onclick="redirectToMain()">AMESTEC</a>
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link white-text-color" href="#about">Despre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-text-color" href="#tickets">Bilete</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-text-color" href="#artists">Line-up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white-text-color" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid rounded ">
+            <div class="row mb-4 pb-4 justify-content-center">
+                <div class="col-sm-6 d-flex flex-row-reverse">
+                    <img src="./images/poster/amestec.jpg" width="350px" height="250px" />
+                </div>
+                <div class="col-md-6">
+                    <img src="./images/poster/date.jpg" width="350px" height="75px" />
+                </div>
+
+            </div>
+            <br />
+            <div class="row mt-4 pt-4 justify-content-center">
+                <div class="col-lg-8 mt-4 p-4 text-center apply-bg-color1 text-white">
+                    <div id="description">
+                        <h2>Despre</h2>
+                        <p>
+                            <strong>AMESTEC</strong> , este despre spontaneitate, prietenie, muzică bună dar mai
+                            ales timp
+                            de
+                            calitate.
+                            Conceptul a pornit în
+                            anul 2014, la inițiativa unui grup de prieteni, colegi de facultate, urmat de o serie de
+                            petreceri cu
+                            acest
+                            nume, organizate în cadru restrâns. Opt ani mai târziu vrem să ne facem auziți și să
+                            împărtășim
+                            și
+                            altora
+                            experiențele unui AMESTEC.
+                        </p>
+                        <a route="/AMESTEC/details" class="btn btn-outline-white text-white btn-sm"
+                            style="cursor: pointer;" onclick="redirectToDetails()">more</a>
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <div class="row mt-4 pt-4 justify-content-center">
+                <div class="col-lg-8 mt-4 p-4 text-center text-white">
+                    <div id="description">
+                        <h1>
+                            <span class="badge apply-bg-color1">
+                                Delut - Fundu Moldovei
+
+                            </span>
+                        </h1>
+                        <h1>
+                            <span class="badge apply-bg-color1">
+                                Suceava
+
+                            </span>
+                        </h1>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </nav>
 
-    <div class="apply-bg-color1">
-        <img src="./images/vizual/wallpaper.jpg" class="img-responsive" style="width: 100%;" alt="Responsive image">
-    </div>
+        <div id="content">
 
-    <div id="content">
+        </div>
 
-    </div>
+        <div id="contact" >
+            <div class="row justify-content-center">
+                <div class="container rounded apply-bg-color1">
+                    <div class="text-center white-text-color">
+                        <br /><br /><br />
+                        <h2>Contact</h2>
+                        <br />
+                        <h5>Calin Popovici</h3>
+                            <p><strong>Tel. </strong> +40 720 115 679</p>
+                            <p><strong>E-mail </strong> amestec.fest@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div class="mt-5 p-4 text-white text-center apply-bg-color1">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="ms-3"><a class="text-muted" href="#"><i class="fa fa-brands fa-twitter"></i></a></li>
-            <li class="ms-3"><a class="text-muted" href="https://instagram.com/amestec.fest?igshid=YmMyMTA2M2Y="><i class="fa fa-brands fa-instagram"></i></a></li>
-            <li class="ms-3"><a class="text-muted" href="#"><i class="fa fa-brands fa-facebook"></i></a></li>
-        </ul>
-        <div class="row">
-            <div class="col-md-4 d-flex align-items-center">
-                <span class="text-muted">© 2022 Amestec, Inc</span>
+        <div class="mt-5 p-4 text-white text-center apply-bg-color1">
+            <div class="row justify-content-center">
+                <div class="container">
+                    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                        <!-- <li class="ms-3 m-2"><a class="text-muted" target="_blank" href="#"><h3><i class="fa fa-brands fa-twitter"></i></h3></a></li> -->
+                        <li class="ms-3 m-2"><a class="text-muted" target="_blank"
+                                href="https://instagram.com/amestec.fest?igshid=YmMyMTA2M2Y=">
+                                <h3><i class="fa fa-brands fa-instagram"></i></h3>
+                            </a></li>
+                        <li class="ms-3 m-2"><a class="text-muted" target="_blank"
+                                href="https://www.facebook.com/amestec.fest">
+                                <h3><i class="fa fa-brands fa-facebook"></i></h3>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 d-flex align-items-center">
+                    <span class="text-muted">© 2022 Amestec, Inc</span>
+                </div>
             </div>
         </div>
     </div>
+
 
     <script type="text/javascript" src="./app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

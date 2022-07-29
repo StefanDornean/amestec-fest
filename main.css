@@ -1,0 +1,89 @@
+.apply-bg-color1 {
+    background-color: #2D2D2D;
+}
+
+.apply-bg-color2 {
+    background-color: #EBEBD2;
+}
+
+.white-text-color{
+    color: #EBEBD2;
+}
+
+.dark-text-color{
+    color: #2D2D2D;
+}
+
+.apply-color1 {
+    color: #80529d;
+}
+
+/* 
+
+.masthead {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 50rem;
+    background: url("./images/poster/img4.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+.masthead2 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35rem;
+    background: url("./images/vizual/img13.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+} */
+
+.masthead {
+    width: 100%;
+    height: auto;
+    /* min-height: 3100px; */
+    background: url("./images/poster/bg4.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+#ticketsView{
+    margin-top: 20em;
+}
+
+@media (max-width: 768px) {
+    #ticketsView{
+        margin-top: 35em;
+    }
+  }
+
+
+.rounded-corner-left
+{
+    margin: 1em;
+    background-color: rgba(235, 235, 210, 0.8);
+  box-shadow:  -10px 10px 5px rgba(0,0,0,0.6);
+  -moz-box-shadow: -10px 10px 5px  rgba(0,0,0,0.6);
+  -webkit-box-shadow: -10px 10px 5px  rgba(0,0,0,0.6);
+  -o-box-shadow: -10px 10px 5px  rgba(0,0,0,0.6);
+  border-radius:25px;
+}
+
+.rounded-corner-right
+{
+  margin: 1em;
+  background-color: rgba(235, 235, 210, 0.8);
+box-shadow:  10px 10px 5px rgba(0,0,0,0.6);
+-moz-box-shadow: 10px 10px 5px  rgba(0,0,0,0.6);
+-webkit-box-shadow: 10px 10px 5px  rgba(0,0,0,0.6);
+-o-box-shadow: 10px 10px 5px  rgba(0,0,0,0.6);
+border-radius:25px;
+}

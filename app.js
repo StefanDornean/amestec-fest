@@ -2,6 +2,7 @@ $('#content').load('main-page.html');
 
 
 function redirectToDetails() {
+    $('#description').hide();
     $('#content').load('./details/details-view.html');
 }
 
@@ -18,5 +19,7 @@ function redirectToContact() {
 }
 
 function redirectToMain() {
+    console.log('hello');
+    $('#description').show();
     $('#content').load('main-page.html');
 }
