@@ -38,31 +38,46 @@ $(document).ready(function () {
 
     var myRouter = new Router('myRouter', [
         {
-            path: '/AMESTEC',
+            path: '/Amestec',
             name: 'Root',
             page: 'main-page.html'
         },
         {
-            path: '/AMESTEC/details',
+            path: '/Amestec/details',
             name: 'details',
             page: './details/details-view.html'
         },
         {
-            path: '/AMESTEC/tickets',
+            path: '/Amestec/acomodation',
+            name: 'acomodation',
+            page: './acomodation/acomodation-view.html'
+        },
+        {
+            path: '/Amestec/tickets',
             name: 'tickets',
             page: './tickets/tickets-view.html'
         },
         {
-            path: '/AMESTEC/lineup',
-            name: 'lineup',
-            page: './lineup/lineup-view.html'
+            path: '/Amestec/transport',
+            name: 'transport',
+            page: './transport/transport-view.html'
+        },
+        {
+            path: '/Amestec/food',
+            name: 'food',
+            page: './food/food-view.html'
+        },
+        {
+            path: '/Amestec/timeline',
+            name: 'timeline',
+            page: './timeline/timeline-view.html'
         }
     ]);
 
     var currentPath = window.location.pathname;
     console.log(currentPath);
-    if(currentPath === '/AMESTEC/'){
-        $('#content').load('main-page.html');
+    if(currentPath === '/Amestec/'){
+        $('#content').load('./main/main-page.html');
     }
     else{
         console.log(currentPath);
