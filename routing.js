@@ -13,17 +13,18 @@ $(document).ready(function () {
             return r.path === route;
         })[0];
 
-        console.log(route);
+        console.log(route, routeInfo);
 
         if (!routeInfo) {
             window.history.pushState({}, '', '404');
             view.innerHtml = '404 page not found';
         }
         else {
-            window.history.pushState({ path: routeInfo.path }, '', routeInfo.path);
+            //window.history.pushState({ path: routeInfo.path }, '', routeInfo.path);
             window.onpopstate = function() {
                 location.reload();
             };
+            console.log(routeInfo.page);
             $('#content').load(routeInfo.page);
         }
     }
@@ -38,9 +39,14 @@ $(document).ready(function () {
 
     var myRouter = new Router('myRouter', [
         {
+            path: '/AMESTEC',
+            name: 'Root',
+            page: './main/main-page.html'
+        },
+        {
             path: '/Amestec',
             name: 'Root',
-            page: 'main-page.html'
+            page: './main/main-page.html'
         },
         {
             path: '/Amestec/details',
@@ -75,12 +81,10 @@ $(document).ready(function () {
     ]);
 
     var currentPath = window.location.pathname;
-    console.log(currentPath);
     if(currentPath === '/Amestec/'){
         $('#content').load('./main/main-page.html');
     }
     else{
-        console.log(currentPath);
         var route = myRouter.routes.filter(function(r){
             return r.path === currentPath;
         });
