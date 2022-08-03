@@ -31,8 +31,7 @@
 .masthead-first{
     width: 100%;
     height: auto;
-    /* min-height: 3100px; */
-    background: url("../images/background/pexels-markus-spiske-2027046.jpg");
+    background: url("../images/background/fm5.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -55,6 +54,16 @@
         height: auto;
         /* min-height: 3100px; */
         background: url("../images/poster/bg5.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+    }
+
+    .masthead-first{
+        width: 100%;
+        height: auto;
+        background: url("../images/background/fm5.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: scroll;

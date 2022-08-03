@@ -4,6 +4,7 @@ $('#detailsBtn').click(function(){ //you can give id or class name here for $('b
     });
 });
 
+$('#about').load('./details/details-view.html');
 $('#ticketsView').load('./main/tickets-short-view.html');
 $('#artistsView').load('./main/artists-carousel.html'); 
 $('#timelineView').load('./timeline/timeline-view.html');
