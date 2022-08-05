@@ -22,7 +22,7 @@
     width: 100%;
     height: auto;
     /* min-height: 3100px; */
-    background: url("../images/poster/bg4.jpg");
+    background: url("../images/poster/bg5.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -31,7 +31,7 @@
 .masthead-first{
     width: 100%;
     height: auto;
-    background: url("../images/background/fm5.jpg");
+    background: url("../images/background/bgps2.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -48,7 +48,17 @@
     background-size: cover;
 }
 
+#timelineView{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 @media (max-width: 768px) {
+    #timelineView{
+        width: 100%;
+    }
     .masthead {
         width: 100%;
         height: auto;
@@ -63,13 +73,16 @@
     .masthead-first{
         width: 100%;
         height: auto;
-        background: url("../images/background/fm5.jpg");
+        background: url("../images/poster/tent.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: scroll;
         background-size: cover;
     }
     
+    .text-color{
+        color: white;
+    }
   }
 
 
