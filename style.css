@@ -2,6 +2,7 @@
  /* Style the video: 100% width and height to cover the entire window */
  #myVideo {
   width: 100%;
+  overflow: hidden;
 }
 
 /* Add some content at the bottom of the video/page */
@@ -29,3 +30,9 @@
   background: #ddd;
   color: black;
 } 
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
