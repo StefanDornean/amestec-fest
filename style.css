@@ -40,6 +40,25 @@
 .rounded {
 
 }
-.apply-bg-color1{
-  
+.apply-bg-color1 {
+  background-color: #2D2D2D;
+}
+
+.apply-bg-color2 {
+  background-color: #EBEBD2;
+}
+.apply-bg-color3 {
+  background-color: #80529d;
+}
+
+.white-text-color{
+  color: #EBEBD2;
+}
+
+.dark-text-color{
+  color: #2D2D2D;
+}
+
+.apply-color1 {
+  color: #80529d;
 }
