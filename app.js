@@ -1,4 +1,4 @@
-$('#content').load('./main/main-page.html');
+// $('#content').load('./main/main-page.html');
 
 
 // function redirectToDetails() {
@@ -23,3 +23,4 @@ $('#content').load('./main/main-page.html');
 //     $('#description').show();
 //     $('#content').load('main-page.html');
 // }
+
