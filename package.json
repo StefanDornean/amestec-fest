@@ -1,11 +1,7 @@
 {
-  "name": "Amestec",
-  "lockfileVersion": 2,
-  "requires": true,
-  "packages": {},
   "dependencies": {
-    "bootstrap": "^5.2.0",
-    "jquery": "^3.6.0",
-    "popper.js": "^1.16.1"
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.6"
   }
 }
