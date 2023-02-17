@@ -396,3 +396,12 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+Amestec.API/bin
+Amestec.API/obj
+Amestec.Core/bin
+Amestec.Core/obj
+Amestec.Infrastructure/bin
+Amestec.Infrastructure/obj
+UsefulApi.Utils/bin
+UsefulApi.Utils/obj

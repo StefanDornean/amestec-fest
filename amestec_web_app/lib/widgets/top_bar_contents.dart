@@ -34,7 +34,7 @@ class _TopBarContentsState extends State<TopBarContents> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset('../assets/images/logo.png'),
+              //Image.asset('../assets/images/logo.png'),
               // Text(
               //   'Amestec',
               //   style: TextStyle(
@@ -47,7 +47,7 @@ class _TopBarContentsState extends State<TopBarContents> {
               // ),
               Expanded(
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(width: screenSize.width / 8),
                     InkWell(
