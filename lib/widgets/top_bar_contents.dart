@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 
 class TopBarContents extends StatefulWidget {
   final double opacity;
@@ -161,4 +161,207 @@ class _TopBarContentsState extends State<TopBarContents> {
       ),
     );
   }
+}
+*/
+import 'dart:html';
+
+import 'package:flutter/material.dart';
+
+class TopBarContents extends StatefulWidget {
+  final double opacity;
+
+  TopBarContents(this.opacity);
+
+  @override
+  _TopBarContentsState createState() => _TopBarContentsState();
+}
+
+class _TopBarContentsState extends State<TopBarContents> {
+  final List _isHovering = [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+      return  PreferredSize(
+        preferredSize: Size.fromHeight(60.0),
+        //child: SafeArea(
+       //  child: Expanded(
+        child: Container(
+        //  margin: EdgeInsets.only(left: 10.0),
+          padding: EdgeInsets.fromLTRB(20.0, 10.0, 0.0, 10.0),
+          color: Colors.white,
+          child: Row(
+            
+           mainAxisAlignment: MainAxisAlignment.center,
+            
+            children: [
+              Image.asset(
+                '../assets/images/logo.png',
+                height: 40.0,
+                
+              ),
+             SizedBox(width: 10.0,),
+
+              Text(
+                '18 - 20 august 2023',
+                 style: TextStyle(
+                  color: Colors.black,
+                     fontWeight: FontWeight.bold,
+                     fontSize: 12.0,
+                     
+                 ),
+              ),
+              SizedBox(width: 100.0),
+               Row(
+                
+               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                SizedBox(width: 20.0),
+                  TextButton(
+                    child: Text(
+                      'TICKETS',
+                       maxLines: 20,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16.0,
+                      ),
+                    ),
+                    onPressed: () {
+                      print('Tickets');
+                    },
+                  ),
+                  SizedBox(width: 20.0),
+                  TextButton(
+                  
+                    child: Text(
+                      'ABOUT',
+                    
+                      style: TextStyle(
+                        color:Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16.0,
+                      ),
+                    ),
+                    onPressed: (){
+                      print('About');
+                    },
+                  ),
+                  SizedBox(width: 20.0),
+                  TextButton(
+                    child: Text(
+                      'LOCATION',
+                      style: TextStyle(
+                        color:Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16.0,
+                      ),
+                    ),
+                    onPressed: () {
+                      print('Location');
+                    },
+                  ),
+                  SizedBox(width: 20.0),
+                  Icon(
+                    Icons.lock_outline,
+                    size: 24.0,
+                    color: Colors.black,
+                  ),
+                  SizedBox(width: 100.0),
+                  Row( 
+                      children: [
+              Container(
+              // padding: const EdgeInsets.only(left: 20.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50.0),
+                 // color: Colors.black,
+                ),
+                child: Image.asset(
+                  '../assets/images/facebook-4-48.png',
+                  height: 25.0,
+                  width: 25.0,
+                ),
+              ),
+              SizedBox(width: 10.0),
+              Container(
+               // padding: EdgeInsets.all(8.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50.0),
+                  //color: Colors.black,
+                ),
+                child: Image.asset(
+                  '../assets/images/twitter-4-48.png',
+                  height: 25.0,
+                  width: 25.0,
+                ),
+              ),
+              SizedBox(width: 10.0),
+              Container(
+                padding: const EdgeInsets.only(right: 20.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50.0),
+                //  color: Colors.black,
+                ),
+                child: Image.asset(
+                  '../assets/images/pngwing.com.png',
+                  height: 25.0,
+                  width: 25.0,
+                  
+                ),
+              ),
+                  /*  mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        icon: Icon(
+                          Icons.circle,
+                          color: Colors.blue,
+                        ),
+                        onPressed: (){
+                          print('Facebook');
+                        },
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          Icons.circle,
+                          color:Colors.lightBlue,
+                        ),
+                        onPressed: (){
+                          print('Twitter');
+                        },
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          Icons.circle,
+                          color: Colors.pink,
+                        ),
+                        onPressed: () {
+                          print('Instagram');
+                        },
+                      ),
+                    ],
+                  ),
+              //    SizedBox(width: 10.0),*/
+                ],
+            
+               ),
+        
+            ],
+          ),
+            ]
+        )
+          )
+ //       )
+//      )
+   //   ); 
+      );
+}
 }
