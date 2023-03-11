@@ -10,6 +10,7 @@ import 'package:explore/widgets/top_bar_contents.dart';
 import 'package:flutter/material.dart';
 
 import '../mywidgets/count_down.dart';
+import '../mywidgets/cover.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -44,8 +45,8 @@ class _HomePageState extends State<HomePage> {
       extendBodyBehindAppBar: true,
       appBar: ResponsiveWidget.isSmallScreen(context)
           ? AppBar(
-              backgroundColor: Colors.blueGrey.shade900.withOpacity(_opacity),
-              elevation: 0,
+              backgroundColor: Colors.white,
+              //elevation: 0,
               title: Text(
                 'EXPLORE',
                 style: TextStyle(
@@ -67,35 +68,7 @@ class _HomePageState extends State<HomePage> {
         physics: ClampingScrollPhysics(),
         child: Column(
           children: [
-            Stack(
-              children: [
-                Container(
-                  child: SizedBox(
-                    height: screenSize.height * 0.45,
-                    width: screenSize.width,
-                    child: Image.asset(
-                      'assets/images/cover.jpg',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Column(
-                  children: [
-                    FloatingQuickAccessBar(screenSize: screenSize),
-                    Container(
-                      child: Column(
-                        children: [
-                          FeaturedHeading(
-                            screenSize: screenSize,
-                          ),
-                          FeaturedTiles(screenSize: screenSize)
-                        ],
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
+            Cover(screenSize: screenSize),
             DestinationHeading(screenSize: screenSize),
             DestinationCarousel(),
             SizedBox(height: screenSize.height / 10),
