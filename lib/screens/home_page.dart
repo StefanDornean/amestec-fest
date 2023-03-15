@@ -1,12 +1,12 @@
 import 'package:explore/widgets/bottom_bar.dart';
 import 'package:explore/widgets/carousel.dart';
+import 'package:explore/widgets/cover.dart';
 import 'package:explore/widgets/destination_heading.dart';
 import 'package:explore/widgets/explore_drawer.dart';
 import 'package:explore/widgets/featured_heading.dart';
 import 'package:explore/widgets/featured_tiles.dart';
 import 'package:explore/widgets/floating_quick_access_bar.dart';
 import 'package:explore/widgets/responsive.dart';
-import 'package:explore/widgets/top_bar_contents.dart';
 import 'package:flutter/material.dart';
 
 import '../mywidgets/count_down.dart';
@@ -40,68 +40,18 @@ class _HomePageState extends State<HomePage> {
         ? _scrollPosition / (screenSize.height * 0.40)
         : 1;
 
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: ResponsiveWidget.isSmallScreen(context)
-          ? AppBar(
-              backgroundColor: Colors.blueGrey.shade900.withOpacity(_opacity),
-              elevation: 0,
-              title: Text(
-                'EXPLORE',
-                style: TextStyle(
-                  color: Colors.blueGrey.shade100,
-                  fontSize: 20,
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w400,
-                  letterSpacing: 3,
-                ),
-              ),
-            )
-          : PreferredSize(
-              preferredSize: Size(screenSize.width, 1000),
-              child: TopBarContents(_opacity),
-            ),
-      drawer: ExploreDrawer(),
-      body: SingleChildScrollView(
-        controller: _scrollController,
-        physics: ClampingScrollPhysics(),
-        child: Column(
-          children: [
-            Stack(
-              children: [
-                Container(
-                  child: SizedBox(
-                    height: screenSize.height * 0.45,
-                    width: screenSize.width,
-                    child: Image.asset(
-                      'assets/images/cover.jpg',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Column(
-                  children: [
-                    FloatingQuickAccessBar(screenSize: screenSize),
-                    Container(
-                      child: Column(
-                        children: [
-                          FeaturedHeading(
-                            screenSize: screenSize,
-                          ),
-                          FeaturedTiles(screenSize: screenSize)
-                        ],
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
-            DestinationHeading(screenSize: screenSize),
-            DestinationCarousel(),
-            SizedBox(height: screenSize.height / 10),
-            BottomBar(),
-          ],
-        ),
+    return SingleChildScrollView(
+      controller: _scrollController,
+      physics: ClampingScrollPhysics(),
+      child: Column(
+        children: [
+          SizedBox(height: 15),
+          CoverPage(),
+          DestinationHeading(screenSize: screenSize),
+          DestinationCarousel(),
+          SizedBox(height: screenSize.height / 10),
+          BottomBar(),
+        ],
       ),
     );
   }
