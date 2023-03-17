@@ -1,4 +1,5 @@
 import 'package:explore/screens/about_page.dart';
+import 'package:explore/screens/tickets_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -32,10 +33,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
     },
     {
       "title": "Tickets",
-      "page": Container(
-        alignment: Alignment.center,
-        child: Text("Explore"),
-      ),
+      "page": TicketsPage(),
     },
     {
       "title": "About",
@@ -115,6 +113,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
         drawer: Drawer(
           backgroundColor: Color(0xFF347C4C),
           child: Container(
+            width: screenSize.width,
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
@@ -217,119 +216,114 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      onPageChanged(0);
-                    },
-                    child: Image.asset(
-                      '../assets/images/logo.png',
-                      height: 50.0,
-                    ),
-                  ),
-                  SizedBox(width: 10),
-                  Text(
-                    '18 - 20 august 2023',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12.0,
-                    ),
-                  ),
-                  SizedBox(width: screenSize.width * 0.10),
-                  TextButton(
-                    child: Text(
-                      'TICKETS',
-                      maxLines: 20,
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16.0,
-                      ),
-                    ),
-                    onPressed: () {
-                      onPageChanged(1);
-                    },
-                  ),
-                  SizedBox(width: 5),
-                  TextButton(
-                    child: Text(
-                      'ABOUT',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16.0,
-                      ),
-                    ),
-                    onPressed: () {
-                      onPageChanged(2);
-                    },
-                  ),
-                  SizedBox(width: 5),
-                  TextButton(
-                    child: Text(
-                      'LOCATION',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16.0,
-                      ),
-                    ),
-                    onPressed: () {
-                      onPageChanged(3);
-                    },
-                  ),
-                  SizedBox(width: 10),
-                  Icon(
-                    Icons.perm_identity_rounded,
-                    size: 24.0,
+              InkWell(
+                onTap: () {
+                  onPageChanged(0);
+                },
+                child: Image.asset(
+                  '../assets/images/logo.png',
+                  height: 50.0,
+                ),
+              ),
+              SizedBox(width: 10),
+              Text(
+                '18 - 20 august 2023',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12.0,
+                ),
+              ),
+              SizedBox(width: screenSize.width * 0.10),
+              TextButton(
+                child: Text(
+                  'TICKETS',
+                  maxLines: 20,
+                  style: TextStyle(
                     color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16.0,
                   ),
-                  SizedBox(width: screenSize.width * 0.10),
-                  IconButton(
-                    onPressed: () async {
-                      await launchUrl(
-                        Uri.parse('https://www.facebook.com/amestec.fest'),
-                        webOnlyWindowName: '_blank',
-                      );
-                    },
-                    icon: FaIcon(
-                      FontAwesomeIcons.facebook,
-                      size: 24.0,
-                      color: Colors.black,
-                    ),
+                ),
+                onPressed: () {
+                  onPageChanged(1);
+                },
+              ),
+              SizedBox(width: 5),
+              TextButton(
+                child: Text(
+                  'ABOUT',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16.0,
                   ),
-                  SizedBox(width: 5),
-                  IconButton(
-                    onPressed: () async {
-                      await launchUrl(
-                        Uri.parse('https://www.instagram.com/amestec.fest/'),
-                        webOnlyWindowName: '_blank',
-                      );
-                    },
-                    icon: FaIcon(
-                      FontAwesomeIcons.twitter,
-                      size: 24.0,
-                      color: Colors.black,
-                    ),
+                ),
+                onPressed: () {
+                  onPageChanged(2);
+                },
+              ),
+              SizedBox(width: 5),
+              TextButton(
+                child: Text(
+                  'LOCATION',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16.0,
                   ),
-                  SizedBox(width: 5),
-                  IconButton(
-                    onPressed: () async {
-                      await launchUrl(
-                        Uri.parse('https://www.instagram.com/amestec.fest/'),
-                        webOnlyWindowName: '_blank',
-                      );
-                    },
-                    icon: FaIcon(
-                      FontAwesomeIcons.instagram,
-                      size: 24.0,
-                      color: Colors.black,
-                    ),
-                  ),
-                ],
+                ),
+                onPressed: () {
+                  onPageChanged(3);
+                },
+              ),
+              SizedBox(width: 10),
+              Icon(
+                Icons.perm_identity_rounded,
+                size: 24.0,
+                color: Colors.black,
+              ),
+              SizedBox(width: screenSize.width * 0.10),
+              IconButton(
+                onPressed: () async {
+                  await launchUrl(
+                    Uri.parse('https://www.facebook.com/amestec.fest'),
+                    webOnlyWindowName: '_blank',
+                  );
+                },
+                icon: FaIcon(
+                  FontAwesomeIcons.facebook,
+                  size: 24.0,
+                  color: Colors.black,
+                ),
+              ),
+              SizedBox(width: 5),
+              IconButton(
+                onPressed: () async {
+                  await launchUrl(
+                    Uri.parse('https://www.instagram.com/amestec.fest/'),
+                    webOnlyWindowName: '_blank',
+                  );
+                },
+                icon: FaIcon(
+                  FontAwesomeIcons.twitter,
+                  size: 24.0,
+                  color: Colors.black,
+                ),
+              ),
+              SizedBox(width: 5),
+              IconButton(
+                onPressed: () async {
+                  await launchUrl(
+                    Uri.parse('https://www.instagram.com/amestec.fest/'),
+                    webOnlyWindowName: '_blank',
+                  );
+                },
+                icon: FaIcon(
+                  FontAwesomeIcons.instagram,
+                  size: 24.0,
+                  color: Colors.black,
+                ),
               ),
             ],
           ),

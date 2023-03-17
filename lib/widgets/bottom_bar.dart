@@ -1,4 +1,3 @@
-import 'package:explore/widgets/bottom_bar_column.dart';
 import 'package:explore/widgets/info_text.dart';
 import 'package:explore/widgets/responsive.dart';
 import 'package:flutter/material.dart';
@@ -19,26 +18,7 @@ class BottomBar extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    BottomBarColumn(
-                      heading: 'ABOUT',
-                      s1: 'Contact Us',
-                      s2: 'About Us',
-                      s3: 'Careers',
-                    ),
-                    BottomBarColumn(
-                      heading: 'HELP',
-                      s1: 'Payment',
-                      s2: 'Cancellation',
-                      s3: 'FAQ',
-                    ),
-                    BottomBarColumn(
-                      heading: 'SOCIAL',
-                      s1: 'Twitter',
-                      s2: 'Facebook',
-                      s3: 'YouTube',
-                    ),
-                  ],
+                  children: [],
                 ),
                 Divider(
                   color: Colors.blueGrey,
@@ -73,24 +53,6 @@ class BottomBar extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    BottomBarColumn(
-                      heading: 'ABOUT',
-                      s1: 'Contact Us',
-                      s2: 'About Us',
-                      s3: 'Careers',
-                    ),
-                    BottomBarColumn(
-                      heading: 'HELP',
-                      s1: 'Payment',
-                      s2: 'Cancellation',
-                      s3: 'FAQ',
-                    ),
-                    BottomBarColumn(
-                      heading: 'SOCIAL',
-                      s1: 'Twitter',
-                      s2: 'Facebook',
-                      s3: 'YouTube',
-                    ),
                     Container(
                       color: Colors.blueGrey,
                       width: 2,
