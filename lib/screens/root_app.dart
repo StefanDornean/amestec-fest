@@ -1,3 +1,4 @@
+
 import 'package:explore/screens/about_page.dart';
 import 'package:explore/screens/tickets_page.dart';
 import 'package:flutter/material.dart';
@@ -36,14 +37,35 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
       "page": TicketsPage(),
     },
     {
-      "title": "About",
+      "title": "Artists",
       "page": AboutPage(),
     },
     {
-      "title": "Location",
+      "title": "News",
       "page": Container(
         alignment: Alignment.center,
         child: Text("Explore"),
+      ),
+    },
+     {
+      "title": "About",
+      "page": Container(
+        alignment: Alignment.center,
+        child: Text("About"),
+      ),
+    },
+     {
+      "title": "Location",
+      "page": Container(
+        alignment: Alignment.center,
+        child: Text("Location"),
+      ),
+    },
+     {
+      "title": "Register",
+      "page": Container(
+        alignment: Alignment.center,
+        child: Text("Register"),
       ),
     },
   ];
@@ -105,76 +127,146 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                   height: 40,
                 ),
                 centerTitle: true,
-                iconTheme: IconThemeData(color: Color(0xFF347C4C)))
+                iconTheme: IconThemeData(color: Color.fromARGB(255, 0, 0, 0)))
             : PreferredSize(
                 preferredSize: Size(screenSize.width, 1000),
                 child: getTopBar(screenSize),
               ),
         drawer: Drawer(
-          backgroundColor: Color(0xFF347C4C),
+          backgroundColor: Colors.black,
+          
+           width: double.infinity,
+          
           child: Container(
-            width: screenSize.width,
+          //  width: screenSize.width,
+         
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
+             // padding: EdgeInsets.fromLTRB(left, top, right, bottom)
+              padding:   EdgeInsets.fromLTRB(screenSize.width * 0.10, screenSize.height * 0.10,screenSize.width * 0.10,screenSize.height * 0.10 ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   InkWell(
                     onTap: () {
+                        _controller.reverse();
+                        Navigator.pop(context);
                       onPageChanged(0);
                     },
                     child: Text(
-                      'Acasa',
-                      style: TextStyle(color: Colors.white, fontSize: 22),
+                      'HOME',
+                      style: TextStyle(color:activeTabIndex == 0 ? Colors.pink : Colors.white, fontSize: 22),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
                     child: Divider(
-                      color: Colors.blueGrey.shade400,
+                 //     color: Colors.blueGrey.shade400,
                       thickness: 2,
                     ),
                   ),
                   InkWell(
                     onTap: () {
+                        _controller.reverse();
+                       Navigator.pop(context);
                       onPageChanged(1);
                     },
+                    
                     child: Text(
-                      'Despre Noi',
-                      style: TextStyle(color: Colors.white, fontSize: 22),
+                      'TICKETS',
+                      style: TextStyle(
+                        color:activeTabIndex == 1 ? Colors.pink : Colors.white,
+                        fontSize: 22),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
                     child: Divider(
-                      color: Colors.blueGrey.shade400,
+                  //    color: Colors.blueGrey.shade400,
                       thickness: 2,
                     ),
                   ),
                   InkWell(
                     onTap: () {
+                        _controller.reverse();
+                        Navigator.pop(context);
                       onPageChanged(2);
                     },
                     child: Text(
-                      'Oferta',
-                      style: TextStyle(color: Colors.white, fontSize: 22),
+                      'ARTISTS',
+                      style: TextStyle(color:activeTabIndex == 2 ? Colors.pink : Colors.white, fontSize: 22),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
                     child: Divider(
-                      color: Colors.blueGrey.shade400,
+                 //     color: Colors.blueGrey.shade400,
                       thickness: 2,
                     ),
                   ),
                   InkWell(
                     onTap: () {
+                        _controller.reverse();
+                        Navigator.pop(context);
                       onPageChanged(3);
                     },
                     child: Text(
-                      'Contact',
-                      style: TextStyle(color: Colors.white, fontSize: 22),
+                      'NEWS',
+                      style: TextStyle(color:activeTabIndex == 3 ? Colors.pink : Colors.white, fontSize: 22),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
+                    child: Divider(
+                  //    color: Colors.blueGrey.shade400,
+                      thickness: 2,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                        _controller.reverse();
+                        Navigator.pop(context);
+                      onPageChanged(4);
+                    },
+                    child: Text(
+                      'ABOUT',
+                      style: TextStyle(color:activeTabIndex == 4 ? Colors.pink : Colors.white, fontSize: 22),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
+                    child: Divider(
+                 //     color: Colors.blueGrey.shade400,
+                      thickness: 2,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                        _controller.reverse();
+                        Navigator.pop(context);
+                      onPageChanged(5);
+                    },
+                    child: Text(
+                      'LOCATION',
+                      style: TextStyle(color:activeTabIndex == 5 ? Colors.pink : Colors.white, fontSize: 22),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
+                    child: Divider(
+                  //    color: Colors.blueGrey.shade400,
+                      thickness: 2,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                        _controller.reverse();
+                        Navigator.pop(context);
+                      onPageChanged(6);
+                    },
+                    child: Text(
+                      'REGISTER',
+                      style: TextStyle(color:activeTabIndex == 6 ? Colors.pink : Colors.white, fontSize: 22),
                     ),
                   ),
                   Expanded(
@@ -183,7 +275,8 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                       child: Text(
                         'Copyright © 2020 | GreenCoffeeHouse',
                         style: TextStyle(
-                          color: Colors.blueGrey.shade300,
+                    //      color: Colors.blueGrey.shade300,
+                    //color: Colors.white,
                           fontSize: 14,
                         ),
                       ),
@@ -331,4 +424,6 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
       ),
     );
   }
+  
+  
 }

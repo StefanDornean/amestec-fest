@@ -69,7 +69,7 @@ class ExploreDrawer extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Text(
-                    'Copyright © 2020 | EXPLORE',
+                    'Copyright © 2021 | EXPLORE',
                     style: TextStyle(
                       color: Colors.blueGrey.shade300,
                       fontSize: 14,
