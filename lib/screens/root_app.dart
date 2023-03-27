@@ -1,4 +1,3 @@
-
 import 'package:explore/screens/about_page.dart';
 import 'package:explore/screens/tickets_page.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +18,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
   final ScrollController _scrollController = ScrollController();
   double _scrollPosition = 0;
   double _opacity = 0;
-  
+
   get onClose => null;
 
   _scrollListener() {
@@ -49,21 +48,21 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
         child: Text("Explore"),
       ),
     },
-     {
+    {
       "title": "About",
       "page": Container(
         alignment: Alignment.center,
         child: Text("About"),
       ),
     },
-     {
+    {
       "title": "Location",
       "page": Container(
         alignment: Alignment.center,
         child: Text("Location"),
       ),
     },
-     {
+    {
       "title": "Register",
       "page": Container(
         alignment: Alignment.center,
@@ -136,172 +135,128 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
               ),
         drawer: Drawer(
           backgroundColor: Colors.black,
-          
-           width: double.infinity,
-          
-          child: Container(
-          //  width: screenSize.width,
-          
-            child: Padding(
-             // padding: EdgeInsets.fromLTRB(left, top, right, bottom)
-              padding:   EdgeInsets.fromLTRB(screenSize.width * 0.10, screenSize.height * 0.10,screenSize.width * 0.10,screenSize.height * 0.10 ),
-              child: Column(
+          width: double.infinity,
+          child: Column(
+            children: [
+              Container(
+                alignment: Alignment.centerRight,
+                child: IconButton(
+                  color: Colors.white,
+                  icon: Icon(Icons.close),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ),
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                   
-                  Container(
-              
-            width: 50,
-            height: 50,
-            child: IconButton(
-              color: Colors.white,
-              icon: Icon(Icons.close),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-                  ),
-                 
                   InkWell(
-                    
                     onTap: () {
-                        //_controller.reverse();
-                        Navigator.pop(context);
+                      Navigator.pop(context);
                       onPageChanged(0);
                     },
                     child: Text(
                       'HOME',
-                      style: TextStyle(color:activeTabIndex == 0 ? Colors.pink : Colors.white, fontSize: 22),
+                      style: TextStyle(
+                          color:
+                              activeTabIndex == 0 ? Colors.pink : Colors.white,
+                          fontSize: 22),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                    child: Divider(
-                 //     color: Colors.blueGrey.shade400,
-                      thickness: 2,
-                    ),
-                  ),
+                  SizedBox(height: 20),
                   InkWell(
                     onTap: () {
-                        _controller.reverse();
-                       Navigator.pop(context);
+                      _controller.reverse();
+                      Navigator.pop(context);
                       onPageChanged(1);
                     },
-                    
                     child: Text(
                       'TICKETS',
                       style: TextStyle(
-                        color:activeTabIndex == 1 ? Colors.pink : Colors.white,
-                        fontSize: 22),
+                          color:
+                              activeTabIndex == 1 ? Colors.pink : Colors.white,
+                          fontSize: 22),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                    child: Divider(
-                  //    color: Colors.blueGrey.shade400,
-                      thickness: 2,
-                    ),
-                  ),
+                  SizedBox(height: 20),
                   InkWell(
                     onTap: () {
-                        _controller.reverse();
-                        Navigator.pop(context);
+                      _controller.reverse();
+                      Navigator.pop(context);
                       onPageChanged(2);
                     },
                     child: Text(
                       'ARTISTS',
-                      style: TextStyle(color:activeTabIndex == 2 ? Colors.pink : Colors.white, fontSize: 22),
+                      style: TextStyle(
+                          color:
+                              activeTabIndex == 2 ? Colors.pink : Colors.white,
+                          fontSize: 22),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                    child: Divider(
-                 //     color: Colors.blueGrey.shade400,
-                      thickness: 2,
-                    ),
-                  ),
+                  SizedBox(height: 20),
                   InkWell(
                     onTap: () {
-                        _controller.reverse();
-                        Navigator.pop(context);
+                      _controller.reverse();
+                      Navigator.pop(context);
                       onPageChanged(3);
                     },
                     child: Text(
                       'NEWS',
-                      style: TextStyle(color:activeTabIndex == 3 ? Colors.pink : Colors.white, fontSize: 22),
+                      style: TextStyle(
+                          color:
+                              activeTabIndex == 3 ? Colors.pink : Colors.white,
+                          fontSize: 22),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                    child: Divider(
-                  //    color: Colors.blueGrey.shade400,
-                      thickness: 2,
-                    ),
-                  ),
+                  SizedBox(height: 20),
                   InkWell(
                     onTap: () {
-                        _controller.reverse();
-                        Navigator.pop(context);
+                      _controller.reverse();
+                      Navigator.pop(context);
                       onPageChanged(4);
                     },
                     child: Text(
                       'ABOUT',
-                      style: TextStyle(color:activeTabIndex == 4 ? Colors.pink : Colors.white, fontSize: 22),
+                      style: TextStyle(
+                          color:
+                              activeTabIndex == 4 ? Colors.pink : Colors.white,
+                          fontSize: 22),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                    child: Divider(
-                 //     color: Colors.blueGrey.shade400,
-                      thickness: 2,
-                    ),
-                  ),
+                  SizedBox(height: 20),
                   InkWell(
                     onTap: () {
-                        _controller.reverse();
-                        Navigator.pop(context);
+                      _controller.reverse();
+                      Navigator.pop(context);
                       onPageChanged(5);
                     },
                     child: Text(
                       'LOCATION',
-                      style: TextStyle(color:activeTabIndex == 5 ? Colors.pink : Colors.white, fontSize: 22),
+                      style: TextStyle(
+                          color:
+                              activeTabIndex == 5 ? Colors.pink : Colors.white,
+                          fontSize: 22),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                    child: Divider(
-                  //    color: Colors.blueGrey.shade400,
-                      thickness: 2,
-                    ),
-                  ),
+                  SizedBox(height: 20),
                   InkWell(
                     onTap: () {
-                        _controller.reverse();
-                        Navigator.pop(context);
+                      _controller.reverse();
+                      Navigator.pop(context);
                       onPageChanged(6);
                     },
                     child: Text(
                       'REGISTER',
-                      style: TextStyle(color:activeTabIndex == 6 ? Colors.pink : Colors.white, fontSize: 22),
+                      style: TextStyle(
+                          color:
+                              activeTabIndex == 6 ? Colors.pink : Colors.white,
+                          fontSize: 22),
                     ),
                   ),
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Text(
-                        'Copyright © 2020 | GreenCoffeeHouse',
-                        style: TextStyle(
-                    //      color: Colors.blueGrey.shade300,
-                    //color: Colors.white,
-                          fontSize: 14,
-                        ),
-                      ),
-                    ),
-                  )
                 ],
               ),
-            ),
+            ],
           ),
         ),
         body: getPage());
@@ -441,6 +396,4 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
       ),
     );
   }
-  
-  
 }
