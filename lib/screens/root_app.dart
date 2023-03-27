@@ -19,6 +19,8 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
   final ScrollController _scrollController = ScrollController();
   double _scrollPosition = 0;
   double _opacity = 0;
+  
+  get onClose => null;
 
   _scrollListener() {
     setState(() {
@@ -139,7 +141,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
           
           child: Container(
           //  width: screenSize.width,
-         
+          
             child: Padding(
              // padding: EdgeInsets.fromLTRB(left, top, right, bottom)
               padding:   EdgeInsets.fromLTRB(screenSize.width * 0.10, screenSize.height * 0.10,screenSize.width * 0.10,screenSize.height * 0.10 ),
@@ -147,9 +149,24 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                   
+                  Container(
+              
+            width: 50,
+            height: 50,
+            child: IconButton(
+              color: Colors.white,
+              icon: Icon(Icons.close),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+                  ),
+                 
                   InkWell(
+                    
                     onTap: () {
-                        _controller.reverse();
+                        //_controller.reverse();
                         Navigator.pop(context);
                       onPageChanged(0);
                     },
