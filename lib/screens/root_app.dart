@@ -114,26 +114,72 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     _opacity = _scrollPosition < screenSize.height * 0.40
-        ? _scrollPosition / (screenSize.height * 0.40)
+        ? _scrollPosition / (screenSize.height * 0.80)
         : 1;
 
     return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: ResponsiveWidget.isSmallScreen(context)
+    
+        
+      appBar: ResponsiveWidget.isSmallScreen(context)
             ? AppBar(
-                backgroundColor: Colors.white,
+              elevation:0,
+               iconTheme: IconThemeData(color: Colors.black),
+              title: Row(
+                
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                
+                children: [
+                  Row(
+                    children: [
+                      Image.asset('assets/images/logo.png',
+                      height: 40.0,
+                      ),
+                      SizedBox(width: 8),
+                      Text(
+                        '18 - 20 August 2023',
+                        style: TextStyle(fontSize: 12,
+                        color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.person,
+                    color: Colors.black,),
+                    onPressed: () {
+
+                    },
+                  ),
+                  
+                ],
+                
+              ),
+             
+             backgroundColor: Colors.white,
+              
+            ):PreferredSize(
+              preferredSize: Size(screenSize.width, 1000),
+              child: getTopBar(screenSize),
+              
+            ),
+
+              /*  backgroundColor: Colors.white,
                 elevation: 0,
                 title: Image.asset(
                   'assets/images/logo.png',
                   height: 40,
                 ),
-                centerTitle: true,
+            
+                centerTitle: false,
                 iconTheme: IconThemeData(color: Color.fromARGB(255, 0, 0, 0)))
             : PreferredSize(
                 preferredSize: Size(screenSize.width, 1000),
                 child: getTopBar(screenSize),
-              ),
-        drawer: Drawer(
+                
+              ),*/
+               
+        endDrawer: Drawer(
+          
           backgroundColor: Colors.black,
           width: double.infinity,
           child: Column(
@@ -259,6 +305,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
             ],
           ),
         ),
+       
         body: getPage());
   }
 
