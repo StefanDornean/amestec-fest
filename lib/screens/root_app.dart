@@ -7,11 +7,13 @@ import 'package:url_launcher/url_launcher.dart';
 import '../widgets/responsive.dart';
 import 'home_page.dart';
 
+
 class RootApp extends StatefulWidget {
   const RootApp({Key? key}) : super(key: key);
 
   @override
   _RootAppState createState() => _RootAppState();
+  
 }
 
 class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
@@ -139,6 +141,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                         '18 - 20 August 2023',
                         style: TextStyle(fontSize: 12,
                         color: Colors.black,
+                        fontWeight: FontWeight.bold
                         ),
                       ),
                     ],
@@ -162,21 +165,6 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
               child: getTopBar(screenSize),
               
             ),
-
-              /*  backgroundColor: Colors.white,
-                elevation: 0,
-                title: Image.asset(
-                  'assets/images/logo.png',
-                  height: 40,
-                ),
-            
-                centerTitle: false,
-                iconTheme: IconThemeData(color: Color.fromARGB(255, 0, 0, 0)))
-            : PreferredSize(
-                preferredSize: Size(screenSize.width, 1000),
-                child: getTopBar(screenSize),
-                
-              ),*/
                
         endDrawer: Drawer(
           
@@ -317,9 +305,10 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
   }
 
   Widget getTopBar(screenSize) {
+      
     final List _isHovering = [false, false, false, false];
     List _isActive = [true, false, false, false, false];
-
+  
     return Container(
       color: Colors.white,
       child: Row(
@@ -352,13 +341,18 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                   'TICKETS',
                   maxLines: 20,
                   style: TextStyle(
-                    color: Colors.black,
+                  color: Colors.black,
                     fontWeight: FontWeight.bold,
+                   /* color: Colors.black,
+                    fontWeight: FontWeight.bold,*/
                     fontSize: 16.0,
                   ),
                 ),
+              
+            
                 onPressed: () {
                   onPageChanged(1);
+                 
                 },
               ),
               SizedBox(width: 5),
@@ -366,13 +360,16 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                 child: Text(
                   'ABOUT',
                   style: TextStyle(
-                    color: Colors.black,
+                    color:  Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 16.0,
                   ),
                 ),
+                 
+                
                 onPressed: () {
                   onPageChanged(2);
+                
                 },
               ),
               SizedBox(width: 5),
@@ -385,8 +382,10 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                     fontSize: 16.0,
                   ),
                 ),
+                
                 onPressed: () {
                   onPageChanged(3);
+                  
                 },
               ),
               SizedBox(width: 10),
@@ -444,3 +443,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
     );
   }
 }
+
+ 
+
+
