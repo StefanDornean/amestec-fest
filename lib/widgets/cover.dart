@@ -75,8 +75,52 @@ class _CoverPage extends State<CoverPage> {
                 height: screenSize.height * 0.5,
                 width: screenSize.width / 6,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(180),
-                  color: Color.fromARGB(255, 204, 47, 99),
+                  borderRadius: BorderRadius.circular(100),
+                  color: Color(0xFFC32B68),
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Image.asset(
+                        'assets/images/stea.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    SizedBox(height: 15),
+                    Text(
+                      'Countdown',
+                      style: TextStyle(
+                        fontFamily: 'LuloClean',
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 15),
+                    InkWell(
+                      onTap: () {
+                        // Add your desired onTap functionality here
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.white,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            'Register now',
+                            style: TextStyle(
+                              fontFamily: 'LuloClean',
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(width: 25),
@@ -84,8 +128,52 @@ class _CoverPage extends State<CoverPage> {
                 height: screenSize.height * 0.5,
                 width: screenSize.width / 6,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(180),
-                  color: Color.fromARGB(255, 163, 44, 181),
+                  borderRadius: BorderRadius.circular(100),
+                  color: Color(0xFF27346B),
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Image.asset(
+                        'assets/images/stea.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    SizedBox(height: 25),
+                    Text(
+                      'News',
+                      style: TextStyle(
+                        fontFamily: 'LuloClean',
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 25),
+                    InkWell(
+                      onTap: () {
+                        // Add your desired onTap functionality here
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.white,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            'Learn More',
+                            style: TextStyle(
+                              fontFamily: 'LuloClean',
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

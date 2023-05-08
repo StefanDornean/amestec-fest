@@ -17,7 +17,6 @@ dependencies:
   material: ^1.0.0+2
   font_awesome_flutter: ^10.4.0
   url_launcher: ^6.1.10
-  flutter_instagram_image_picker: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -27,6 +26,14 @@ flutter:
   uses-material-design: true
 
   fonts:
+    - family: AvenirLight
+      fonts:
+        - asset: fonts/Avenir-Light.ttf
+
+    - family: LuloClean
+      fonts:
+        - asset: fonts/Lulo-Clean.ttf
+
     - family: Montserrat
       fonts:
         - asset: fonts/Montserrat-Regular.ttf
