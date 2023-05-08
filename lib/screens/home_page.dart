@@ -1,7 +1,7 @@
 import 'package:explore/widgets/bottom_bar.dart';
 import 'package:explore/widgets/carousel.dart';
 import 'package:explore/widgets/cover.dart';
-import 'package:explore/widgets/destination_heading.dart';
+import 'package:explore/widgets/heading.dart';
 import 'package:explore/widgets/explore_drawer.dart';
 import 'package:explore/widgets/featured_heading.dart';
 import 'package:explore/widgets/featured_tiles.dart';
@@ -10,6 +10,8 @@ import 'package:explore/widgets/responsive.dart';
 import 'package:flutter/material.dart';
 
 import '../mywidgets/count_down.dart';
+import '../widgets/acomodation.dart';
+import '../widgets/artists.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -47,8 +49,13 @@ class _HomePageState extends State<HomePage> {
         children: [
           SizedBox(height: 15),
           CoverPage(),
-          DestinationHeading(screenSize: screenSize),
-          DestinationCarousel(),
+          Heading(screenSize: screenSize, text: 'Artists'),
+          ArtistsPage(),
+          Heading(screenSize: screenSize, text: 'Acomodation'),
+          Acomodation(
+            screenSize: screenSize,
+          ),
+          Heading(screenSize: screenSize, text: 'Our Instagram Feed'),
           SizedBox(height: screenSize.height / 10),
           BottomBar(),
         ],

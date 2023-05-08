@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/heading.dart';
+
 class TicketsPage extends StatefulWidget {
   const TicketsPage({Key? key}) : super(key: key);
 
@@ -8,88 +10,65 @@ class TicketsPage extends StatefulWidget {
 }
 
 class _TicketsPageState extends State<TicketsPage> {
+  final ScrollController _scrollController = ScrollController();
+  double _scrollPosition = 0;
+  double _opacity = 0;
+
+  _scrollListener() {
+    setState(() {
+      _scrollPosition = _scrollController.position.pixels;
+    });
+  }
+
+  @override
+  void initState() {
+    _scrollController.addListener(_scrollListener);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.green,
-        body: CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              backgroundColor: Colors.green,
-              pinned: true,
-              snap: true,
-              floating: true,
-              title: getAppBar(),
-            ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (context, index) => buildBody(),
-                childCount: 1,
-              ),
-            )
-          ],
-        ));
-  }
+    var screenSize = MediaQuery.of(context).size;
 
-  Widget getAppBar() {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Tickets",
-                  style: TextStyle(
-                      color: Colors.green,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w600),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget buildBody() {
     return SingleChildScrollView(
-      padding: EdgeInsets.only(right: 20, top: 10),
+      controller: _scrollController,
+      physics: ClampingScrollPhysics(),
       child: Column(
         children: [
-          Container(
-            padding: EdgeInsets.only(left: 20),
-            child: Column(
-              children: <Widget>[
-                SizedBox(
-                  height: 12,
+          Heading(screenSize: screenSize, text: 'Tickets'),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                height: screenSize.height * 0.5,
+                width: screenSize.width / 6,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Color(0xFFC32B68),
                 ),
-                Text(
-                  "Sangvaleap",
-                  style: TextStyle(
-                    color: Colors.green,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                  ),
+                child: Column(),
+              ),
+              Container(
+                height: screenSize.height * 0.5,
+                width: screenSize.width / 6,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Color(0xFFC32B68),
                 ),
-                SizedBox(
-                  height: 5,
+                child: Column(),
+              ),
+              Container(
+                height: screenSize.height * 0.5,
+                width: screenSize.width / 6,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Color(0xFFC32B68),
                 ),
-                Text(
-                  "+12 345 6789",
-                  style: TextStyle(
-                    color: Colors.green,
-                    fontSize: 14,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 40),
-          SizedBox(height: 10),
+                child: Column(),
+              )
+            ],
+          )
         ],
       ),
     );
