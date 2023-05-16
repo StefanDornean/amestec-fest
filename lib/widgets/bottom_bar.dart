@@ -1,13 +1,3 @@
-
-    
-      
-  
- 
-
-
-
-
-
 import 'package:explore/widgets/info_text.dart';
 import 'package:explore/widgets/responsive.dart';
 import 'package:flutter/material.dart';

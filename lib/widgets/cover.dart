@@ -16,6 +16,7 @@ class _CoverPage extends State<CoverPage> {
     return ResponsiveWidget.isSmallScreen(context)
         ? Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
+           
             children: [
               Stack(
                 children: <Widget>[
@@ -55,9 +56,10 @@ class _CoverPage extends State<CoverPage> {
             ],
           )
         : Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+        
             children: [
-              Container(
+      
+             Container(
                 child: SizedBox(
                   height: screenSize.height * 0.5,
                   width: screenSize.width / 1.8,
@@ -70,8 +72,13 @@ class _CoverPage extends State<CoverPage> {
                   ),
                 ),
               ),
+              
               SizedBox(width: 25),
-              Container(
+              Flexible(
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+              child: SingleChildScrollView(
+              child: Container(
                 height: screenSize.height * 0.5,
                 width: screenSize.width / 6,
                 decoration: BoxDecoration(
@@ -79,6 +86,8 @@ class _CoverPage extends State<CoverPage> {
                   color: Color(0xFFC32B68),
                 ),
                 child: Column(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Padding(
                       padding: EdgeInsets.all(20),
@@ -88,20 +97,33 @@ class _CoverPage extends State<CoverPage> {
                       ),
                     ),
                     SizedBox(height: 15),
+                   
                     Text(
+                      
                       'Countdown',
+                      
                       style: TextStyle(
                         fontFamily: 'LuloClean',
                         color: Colors.white,
                       ),
                     ),
+                
                     SizedBox(height: 15),
-                    InkWell(
+                  
+                       InkWell(
+                        onTap: () {
+
+                        },
+                      
+                    
+                  /*  InkWell(
                       onTap: () {
                         // Add your desired onTap functionality here
-                      },
+                      },*/
                       child: Container(
+                         
                         decoration: BoxDecoration(
+                 
                           border: Border.all(
                             color: Colors.white,
                             width: 2.0,
@@ -110,23 +132,39 @@ class _CoverPage extends State<CoverPage> {
                         ),
                         child: Padding(
                           padding: EdgeInsets.all(8.0),
+                        
                           child: Text(
+                         
                             'Register now',
                             style: TextStyle(
                               fontFamily: 'LuloClean',
                               color: Colors.white,
                             ),
+                            
                           ),
+                          
                         ),
+                        
                       ),
+                  
                     ),
+                
                   ],
                 ),
+            
+                ),
+                
+              ),
+              ),
               ),
               SizedBox(width: 25),
-              Container(
+              Flexible(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: SingleChildScrollView(
+            child:  Container(
                 height: screenSize.height * 0.5,
-                width: screenSize.width / 6,
+              width: screenSize.width / 6,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
                   color: Color(0xFF27346B),
@@ -139,6 +177,7 @@ class _CoverPage extends State<CoverPage> {
                         'assets/images/stea.png',
                         fit: BoxFit.cover,
                       ),
+                      
                     ),
                     SizedBox(height: 25),
                     Text(
@@ -149,11 +188,14 @@ class _CoverPage extends State<CoverPage> {
                       ),
                     ),
                     SizedBox(height: 25),
-                    InkWell(
+                      SingleChildScrollView(
+                  child:  InkWell(
                       onTap: () {
+                        
                         // Add your desired onTap functionality here
                       },
-                      child: Container(
+                      child: Container(  
+ 
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Colors.white,
@@ -162,6 +204,7 @@ class _CoverPage extends State<CoverPage> {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Padding(
+                          
                           padding: EdgeInsets.all(8.0),
                           child: Text(
                             'Learn More',
@@ -173,10 +216,15 @@ class _CoverPage extends State<CoverPage> {
                         ),
                       ),
                     ),
+                      ),
                   ],
                 ),
               ),
+                ),
+            
+              ),
+              ),
             ],
-          );
+        );
   }
 }
