@@ -1,5 +1,7 @@
+import 'package:date_count_down/date_count_down.dart';
 import 'package:explore/widgets/responsive.dart';
 import 'package:flutter/material.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class CoverPage extends StatefulWidget {
   const CoverPage({Key? key}) : super(key: key);
@@ -23,13 +25,29 @@ class _CoverPage extends State<CoverPage> {
                     child: SizedBox(
                       height: screenSize.height * 0.4,
                       width: screenSize.width * 0.90,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(100),
-                        child: Image.asset(
-                          'assets/images/cover.jpg',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                      child: LayoutBuilder(builder:
+                          (BuildContext context, BoxConstraints constraints) {
+                        return ClipRRect(
+                          borderRadius: BorderRadius.circular(100),
+                          child: IgnorePointer(
+                            ignoring: true,
+                            child: YoutubePlayer(
+                              enableFullScreenOnVerticalDrag: false,
+                              controller: YoutubePlayerController.fromVideoId(
+                                videoId: '7OWhULtMYO4',
+                                autoPlay: true,
+                                params: const YoutubePlayerParams(
+                                  showFullscreenButton: false,
+                                  showControls: false,
+                                  showVideoAnnotations: false,
+                                  loop: true,
+                                  pointerEvents: PointerEvents.none,
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      }),
                     ),
                   ),
                   Padding(
@@ -48,6 +66,36 @@ class _CoverPage extends State<CoverPage> {
                         borderRadius: BorderRadius.circular(180),
                         color: Color.fromARGB(255, 204, 47, 99),
                       ),
+                      child: Center(
+                        child: GestureDetector(
+                          // onTap: () {
+                          //   // Handle onTap event
+                          //   print('Text tapped!');
+                          // },
+                          child: CountDownText(
+                            due: DateTime.parse("2023-08-17 00:00:00"),
+                            finishedText: "Done",
+                            showLabel: true,
+                            longDateName: true,
+                            daysTextLong: " DAYS\n",
+                            hoursTextLong: "h ",
+                            minutesTextLong: "m ",
+                            secondsTextLong: "s",
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white,
+                              fontFamily: 'LuloClean',
+                            ),
+                          ),
+                          // child: Text(
+                          //   'Tickets',
+                          //   style: TextStyle(
+                          //     fontFamily: 'LuloClean',
+                          //     color: Colors.white,
+                          //   ),
+                          // ),
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -58,36 +106,48 @@ class _CoverPage extends State<CoverPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                child: SizedBox(
-                  height: screenSize.height * 0.5,
-                  width: screenSize.width / 1.8,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(100),
-                    child: Image.asset(
-                      'assets/images/cover.jpg',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                height: screenSize.height * 0.5,
+                width: screenSize.width / 2,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
                 ),
+                child: LayoutBuilder(builder:
+                    (BuildContext context, BoxConstraints constraints) {
+                  return ClipRRect(
+                    borderRadius: BorderRadius.circular(100),
+                    child: YoutubePlayer(
+                      controller: YoutubePlayerController.fromVideoId(
+                        videoId: '7OWhULtMYO4',
+                        autoPlay: true,
+                        startSeconds: 0,
+                        params: const YoutubePlayerParams(
+                            showFullscreenButton: true),
+                      ),
+                    ),
+                  );
+                }),
               ),
               SizedBox(width: 25),
               Container(
                 height: screenSize.height * 0.5,
                 width: screenSize.width / 6,
+                alignment: Alignment.center,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
                   color: Color(0xFFC32B68),
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(20),
+                      padding: EdgeInsets.all(10),
                       child: Image.asset(
                         'assets/images/stea.png',
                         fit: BoxFit.cover,
                       ),
                     ),
-                    SizedBox(height: 15),
+                    SizedBox(height: 10),
                     Text(
                       'Countdown',
                       style: TextStyle(
@@ -95,31 +155,46 @@ class _CoverPage extends State<CoverPage> {
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(height: 15),
-                    InkWell(
-                      onTap: () {
-                        // Add your desired onTap functionality here
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 2.0,
-                          ),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text(
-                            'Register now',
-                            style: TextStyle(
-                              fontFamily: 'LuloClean',
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
+                    CountDownText(
+                      due: DateTime.parse("2023-08-17 00:00:00"),
+                      finishedText: "Done",
+                      showLabel: true,
+                      longDateName: true,
+                      daysTextLong: " DAYS\n",
+                      hoursTextLong: "h ",
+                      minutesTextLong: "m ",
+                      secondsTextLong: "s",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'LuloClean',
                       ),
                     ),
+
+                    SizedBox(height: 10),
+                    // InkWell(
+                    //   onTap: () {
+                    //     // Add your desired onTap functionality here
+                    //   },
+                    //   child: Container(
+                    //     decoration: BoxDecoration(
+                    //       border: Border.all(
+                    //         color: Colors.white,
+                    //         width: 2.0,
+                    //       ),
+                    //       borderRadius: BorderRadius.circular(20),
+                    //     ),
+                    //     child: Padding(
+                    //       padding: EdgeInsets.all(8.0),
+                    //       child: Text(
+                    //         'Register now',
+                    //         style: TextStyle(
+                    //           fontFamily: 'LuloClean',
+                    //           color: Colors.white,
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
@@ -148,31 +223,31 @@ class _CoverPage extends State<CoverPage> {
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(height: 25),
-                    InkWell(
-                      onTap: () {
-                        // Add your desired onTap functionality here
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 2.0,
-                          ),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text(
-                            'Learn More',
-                            style: TextStyle(
-                              fontFamily: 'LuloClean',
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                    // SizedBox(height: 25),
+                    // InkWell(
+                    //   onTap: () {
+                    //     // Add your desired onTap functionality here
+                    //   },
+                    //   child: Container(
+                    //     decoration: BoxDecoration(
+                    //       border: Border.all(
+                    //         color: Colors.white,
+                    //         width: 2.0,
+                    //       ),
+                    //       borderRadius: BorderRadius.circular(20),
+                    //     ),
+                    //     child: Padding(
+                    //       padding: EdgeInsets.all(8.0),
+                    //       child: Text(
+                    //         'Learn More',
+                    //         style: TextStyle(
+                    //           fontFamily: 'LuloClean',
+                    //           color: Colors.white,
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),

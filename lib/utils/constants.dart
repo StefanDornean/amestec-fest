@@ -1,52 +1,53 @@
 final List<Map<String, dynamic>> artists = [
-  {
-    'name': 'Alexandra Drobota',
-    'imageUrl': 'assets/images/artists/AlexandraD.png',
-    'price': 9.99,
-  },
+  // {
+  //   'name': 'Alexandra Drobota',
+  //   'imageUrl': 'assets/images/artist-AlexandraD.png',
+  // },
   {
     'name': 'Chiribaw',
-    'imageUrl': 'assets/images/artists/Chiribaw.png',
-    'price': 19.99,
+    'imageUrl': 'assets/images/artist-Chiribaw.png',
   },
   {
     'name': 'DJ Sino',
-    'imageUrl': 'assets/images/artists/DJSino.png',
-    'price': 29.99,
+    'imageUrl': 'assets/images/artist-DJSino.png',
   },
   {
     'name': 'Dj SPZ',
-    'imageUrl': 'assets/images/artists/DjSPZ.png',
-    'price': 39.99,
+    'imageUrl': 'assets/images/artist-DjSPZ.png',
   },
   {
     'name': 'Filipash',
-    'imageUrl': 'assets/images/artists/Filipash.png',
-    'price': 49.99,
+    'imageUrl': 'assets/images/artist-Filipash.png',
   },
-  {
-    'name': 'Harcea Parcea',
-    'imageUrl': 'assets/images/artists/HarceaPacea.png',
-    'price': 59.99,
-  },
+  // {
+  //   'name': 'Harcea Parcea',
+  //   'imageUrl': 'assets/images/artist-HarceaPacea.png',
+  // },
   {
     'name': 'Mad Liquid',
-    'imageUrl': 'assets/images/artists/MadLiquid.png',
-    'price': 69.99,
+    'imageUrl': 'assets/images/artist-MadLiquid.png',
   },
   {
     'name': 'Rave',
-    'imageUrl': 'assets/images/artists/Rave.png',
-    'price': 79.99,
+    'imageUrl': 'assets/images/artist-Rave.png',
   },
   {
     'name': 'The Stone Age Nerds',
-    'imageUrl': 'assets/images/artists/TheStoneAgeNerds.png',
-    'price': 79.99,
+    'imageUrl': 'assets/images/artist-TheStoneAgeNerds.png',
   },
   {
     'name': 'Zentone',
-    'imageUrl': 'assets/images/artists/Zentone.png',
-    'price': 79.99,
+    'imageUrl': 'assets/images/artist-Zentone.png',
   },
+];
+
+final List<String> instaFeed = [
+  'assets/images/Misiuni-ONGArtboard-0.png',
+  'assets/images/Misiuni-ONGArtboard-1.png',
+  'assets/images/Misiuni-ONGArtboard-2.png',
+  'assets/images/Misiuni-ONGArtboard-3.png',
+  'assets/images/Misiuni-ONGArtboard-4.png',
+  'assets/images/Misiuni-ONGArtboard-5.png',
+  'assets/images/Misiuni-ONGArtboard-6.png',
+  'assets/images/Misiuni-ONGArtboard-7.png',
 ];

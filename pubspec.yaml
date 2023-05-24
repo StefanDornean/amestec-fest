@@ -11,12 +11,17 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  date_count_down:
   cupertino_icons: ^1.0.2
   carousel_slider: ^4.0.0-nullsafety.0
   material: ^1.0.0+2
   font_awesome_flutter: ^10.4.0
   url_launcher: ^6.1.10
+  youtube_player_iframe: ^4.0.4
+  # google_maps_flutter: ^2.0.9
+  # http: ^0.13.6
+  # flutter_webview_plugin: ^0.4.0
+  # flutter_html: ^3.0.0-beta.1
 
 dev_dependencies:
   flutter_test:
@@ -41,6 +46,10 @@ flutter:
     - family: Electrolize
       fonts:
         - asset: fonts/Electrolize-Regular.ttf
+
+    - family: ArgentumSans
+      fonts:
+        - asset: fonts/ArgentumSans-Light.ttf
 
   assets:
     - assets/images/

@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import '../mywidgets/count_down.dart';
 import '../widgets/acomodation.dart';
 import '../widgets/artists.dart';
+import '../widgets/instagram_pictures.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -55,8 +56,14 @@ class _HomePageState extends State<HomePage> {
           Acomodation(
             screenSize: screenSize,
           ),
-          Heading(screenSize: screenSize, text: 'Our Instagram Feed'),
-          SizedBox(height: screenSize.height / 10),
+          SizedBox(height: 25),
+          Heading(
+              screenSize: screenSize,
+              text: 'Instagram Feed',
+              bgColor: Colors.black,
+              textColor: Colors.white),
+          InstagramPicturesPage(),
+          SizedBox(height: 25),
           BottomBar(),
         ],
       ),

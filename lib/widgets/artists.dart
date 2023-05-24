@@ -18,34 +18,28 @@ class _ArtistsPage extends State<ArtistsPage> {
 
   @override
   Widget build(BuildContext context) {
-    int artistPerRow = ResponsiveWidget.isSmallScreen(context) ? 3 : 4;
-    return AspectRatio(
-      aspectRatio: 4,
-      child: SingleChildScrollView(
-        // Wrap with SingleChildScrollView
-        child: SizedBox(
-          width: double.infinity,
-          child: GridView.builder(
-            physics: NeverScrollableScrollPhysics(), // Disable scrolling
-            shrinkWrap: true,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
-              mainAxisSpacing: 0,
-              crossAxisSpacing: 0,
-            ),
-            itemCount: artists.length,
-            itemBuilder: (context, index) {
-              return ArtistCard(
-                name: artists[index]['name'],
-                imageUrl: artists[index]['imageUrl'],
-                price: artists[index]['price'],
-                onTap: () {
-                  // Handle Artist tap
-                },
-              );
-            },
-          ),
+    int artistPerRow = ResponsiveWidget.isSmallScreen(context) ? 4 : 5;
+    return SizedBox(
+      width: double.infinity,
+      child: GridView.builder(
+        physics: NeverScrollableScrollPhysics(), // Disable scrolling
+        primary: false,
+        shrinkWrap: true,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
+          mainAxisSpacing: 0,
+          crossAxisSpacing: 0,
         ),
+        itemCount: artists.length,
+        itemBuilder: (context, index) {
+          return ArtistCard(
+            name: artists[index]['name'],
+            imageUrl: artists[index]['imageUrl'],
+            onTap: () {
+              // Handle Artist tap
+            },
+          );
+        },
       ),
     );
   }
@@ -54,13 +48,11 @@ class _ArtistsPage extends State<ArtistsPage> {
 class ArtistCard extends StatelessWidget {
   final String name;
   final String imageUrl;
-  final double price;
   final VoidCallback onTap;
 
   const ArtistCard({
     required this.name,
     required this.imageUrl,
-    required this.price,
     required this.onTap,
   });
 
@@ -75,7 +67,7 @@ class ArtistCard extends StatelessWidget {
           children: <Widget>[
             AspectRatio(
               aspectRatio: 3 / 3,
-              child: Image.network(
+              child: Image.asset(
                 imageUrl,
                 fit: BoxFit.cover,
               ),

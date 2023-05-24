@@ -1,19 +1,21 @@
 import 'package:explore/screens/about_page.dart';
 import 'package:explore/screens/tickets_page.dart';
+import 'package:explore/widgets/artists.dart';
+import 'package:explore/widgets/info_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../widgets/responsive.dart';
 import 'home_page.dart';
-
+import 'location_page.dart';
+import 'news_page.dart';
 
 class RootApp extends StatefulWidget {
   const RootApp({Key? key}) : super(key: key);
 
   @override
   _RootAppState createState() => _RootAppState();
-  
 }
 
 class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
@@ -41,35 +43,19 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
     },
     {
       "title": "Artists",
-      "page": AboutPage(),
+      "page": ArtistsPage(),
     },
     {
       "title": "News",
-      "page": Container(
-        alignment: Alignment.center,
-        child: Text("Explore"),
-      ),
+      "page": NewsPage(),
     },
     {
       "title": "About",
-      "page": Container(
-        alignment: Alignment.center,
-        child: Text("About"),
-      ),
+      "page": AboutPage(),
     },
     {
       "title": "Location",
-      "page": Container(
-        alignment: Alignment.center,
-        child: Text("Location"),
-      ),
-    },
-    {
-      "title": "Register",
-      "page": Container(
-        alignment: Alignment.center,
-        child: Text("Register"),
-      ),
+      "page": LocationPage(),
     },
   ];
 
@@ -120,54 +106,79 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
         : 1;
 
     return Scaffold(
-    
-        
-      appBar: ResponsiveWidget.isSmallScreen(context)
+        appBar: ResponsiveWidget.isSmallScreen(context)
             ? AppBar(
-              elevation:0,
-               iconTheme: IconThemeData(color: Colors.black),
-              title: Row(
-                
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                
-                children: [
-                  Row(
-                    children: [
-                      Image.asset('assets/images/logo.png',
-                      height: 40.0,
-                      ),
-                      SizedBox(width: 8),
-                      Text(
-                        '18 - 20 August 2023',
-                        style: TextStyle(fontSize: 12,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold
+                elevation: 0,
+                iconTheme: IconThemeData(color: Colors.black),
+                title: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Image.asset(
+                          'assets/images/logo.png',
+                          height: 40.0,
                         ),
-                      ),
-                    ],
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.person,
-                    color: Colors.black,),
-                    onPressed: () {
-
-                    },
-                  ),
-                  
-                ],
-                
+                        SizedBox(width: 5),
+                        Text(
+                          '18-20 August 2023',
+                          style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.black,
+                              fontFamily: 'LuloClean',
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.zero,
+                          child: IconButton(
+                            iconSize: 20,
+                            onPressed: () async {
+                              await launchUrl(
+                                Uri.parse(
+                                    'https://www.facebook.com/amestec.fest'),
+                                webOnlyWindowName: '_blank',
+                              );
+                            },
+                            icon: FaIcon(
+                              FontAwesomeIcons.facebook,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.zero,
+                          child: IconButton(
+                            iconSize: 20,
+                            onPressed: () async {
+                              await launchUrl(
+                                Uri.parse(
+                                    'https://www.instagram.com/amestec.fest/'),
+                                webOnlyWindowName: '_blank',
+                              );
+                            },
+                            icon: FaIcon(
+                              FontAwesomeIcons.instagram,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                backgroundColor: Colors.white,
+              )
+            : PreferredSize(
+                preferredSize: Size(screenSize.width, 1000),
+                child: getTopBar(screenSize),
               ),
-             
-             backgroundColor: Colors.white,
-              
-            ):PreferredSize(
-              preferredSize: Size(screenSize.width, 1000),
-              child: getTopBar(screenSize),
-              
-            ),
-               
         endDrawer: Drawer(
-          
           backgroundColor: Colors.black,
           width: double.infinity,
           child: Column(
@@ -193,57 +204,61 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                     child: Text(
                       'HOME',
                       style: TextStyle(
+                          fontFamily: 'LuloClean',
                           color:
                               activeTabIndex == 0 ? Colors.pink : Colors.white,
                           fontSize: 22),
                     ),
                   ),
                   SizedBox(height: 20),
-                  InkWell(
-                    onTap: () {
-                      _controller.reverse();
-                      Navigator.pop(context);
-                      onPageChanged(1);
-                    },
-                    child: Text(
-                      'TICKETS',
-                      style: TextStyle(
-                          color:
-                              activeTabIndex == 1 ? Colors.pink : Colors.white,
-                          fontSize: 22),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  InkWell(
-                    onTap: () {
-                      _controller.reverse();
-                      Navigator.pop(context);
-                      onPageChanged(2);
-                    },
-                    child: Text(
-                      'ARTISTS',
-                      style: TextStyle(
-                          color:
-                              activeTabIndex == 2 ? Colors.pink : Colors.white,
-                          fontSize: 22),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  InkWell(
-                    onTap: () {
-                      _controller.reverse();
-                      Navigator.pop(context);
-                      onPageChanged(3);
-                    },
-                    child: Text(
-                      'NEWS',
-                      style: TextStyle(
-                          color:
-                              activeTabIndex == 3 ? Colors.pink : Colors.white,
-                          fontSize: 22),
-                    ),
-                  ),
-                  SizedBox(height: 20),
+                  // InkWell(
+                  //   onTap: () {
+                  //     _controller.reverse();
+                  //     Navigator.pop(context);
+                  //     onPageChanged(1);
+                  //   },
+                  //   child: Text(
+                  //     'TICKETS',
+                  //     style: TextStyle(
+                  //         fontFamily: 'LuloClean',
+                  //         color:
+                  //             activeTabIndex == 1 ? Colors.pink : Colors.white,
+                  //         fontSize: 22),
+                  //   ),
+                  // ),
+                  // SizedBox(height: 20),
+                  // InkWell(
+                  //   onTap: () {
+                  //     _controller.reverse();
+                  //     Navigator.pop(context);
+                  //     onPageChanged(2);
+                  //   },
+                  //   child: Text(
+                  //     'ARTISTS',
+                  //     style: TextStyle(
+                  //         fontFamily: 'LuloClean',
+                  //         color:
+                  //             activeTabIndex == 2 ? Colors.pink : Colors.white,
+                  //         fontSize: 22),
+                  //   ),
+                  // ),
+                  // SizedBox(height: 20),
+                  // InkWell(
+                  //   onTap: () {
+                  //     _controller.reverse();
+                  //     Navigator.pop(context);
+                  //     onPageChanged(3);
+                  //   },
+                  //   child: Text(
+                  //     'NEWS',
+                  //     style: TextStyle(
+                  //         fontFamily: 'LuloClean',
+                  //         color:
+                  //             activeTabIndex == 3 ? Colors.pink : Colors.white,
+                  //         fontSize: 22),
+                  //   ),
+                  // ),
+                  //SizedBox(height: 20),
                   InkWell(
                     onTap: () {
                       _controller.reverse();
@@ -253,6 +268,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                     child: Text(
                       'ABOUT',
                       style: TextStyle(
+                          fontFamily: 'LuloClean',
                           color:
                               activeTabIndex == 4 ? Colors.pink : Colors.white,
                           fontSize: 22),
@@ -268,23 +284,9 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                     child: Text(
                       'LOCATION',
                       style: TextStyle(
+                          fontFamily: 'LuloClean',
                           color:
                               activeTabIndex == 5 ? Colors.pink : Colors.white,
-                          fontSize: 22),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  InkWell(
-                    onTap: () {
-                      _controller.reverse();
-                      Navigator.pop(context);
-                      onPageChanged(6);
-                    },
-                    child: Text(
-                      'REGISTER',
-                      style: TextStyle(
-                          color:
-                              activeTabIndex == 6 ? Colors.pink : Colors.white,
                           fontSize: 22),
                     ),
                   ),
@@ -293,7 +295,6 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
             ],
           ),
         ),
-       
         body: getPage());
   }
 
@@ -305,10 +306,9 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
   }
 
   Widget getTopBar(screenSize) {
-      
     final List _isHovering = [false, false, false, false];
     List _isActive = [true, false, false, false, false];
-  
+
     return Container(
       color: Colors.white,
       child: Row(
@@ -317,6 +317,11 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              SizedBox(
+                width: 130,
+                child: InfoText(text: "Organizație NON PROFIT"),
+              ),
+              SizedBox(width: 10),
               InkWell(
                 onTap: () {
                   onPageChanged(0);
@@ -330,29 +335,26 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
               Text(
                 '18 - 20 august 2023',
                 style: TextStyle(
+                  fontFamily: 'LuloClean',
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: 12.0,
+                  fontSize: 12,
                 ),
               ),
-              SizedBox(width: screenSize.width * 0.10),
+              SizedBox(width: screenSize.width * 0.07),
               TextButton(
                 child: Text(
                   'TICKETS',
                   maxLines: 20,
                   style: TextStyle(
-                  color: Colors.black,
+                    fontFamily: 'LuloClean',
+                    color: Colors.black,
                     fontWeight: FontWeight.bold,
-                   /* color: Colors.black,
-                    fontWeight: FontWeight.bold,*/
-                    fontSize: 16.0,
+                    fontSize: 14,
                   ),
                 ),
-              
-            
                 onPressed: () {
-                  onPageChanged(1);
-                 
+                  //onPageChanged(1);
                 },
               ),
               SizedBox(width: 5),
@@ -360,16 +362,14 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                 child: Text(
                   'ABOUT',
                   style: TextStyle(
-                    color:  Colors.black,
+                    fontFamily: 'LuloClean',
+                    color: Colors.black,
                     fontWeight: FontWeight.bold,
-                    fontSize: 16.0,
+                    fontSize: 14,
                   ),
                 ),
-                 
-                
                 onPressed: () {
-                  onPageChanged(2);
-                
+                  onPageChanged(4);
                 },
               ),
               SizedBox(width: 5),
@@ -377,24 +377,17 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                 child: Text(
                   'LOCATION',
                   style: TextStyle(
+                    fontFamily: 'LuloClean',
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
-                    fontSize: 16.0,
+                    fontSize: 14,
                   ),
                 ),
-                
                 onPressed: () {
-                  onPageChanged(3);
-                  
+                  onPageChanged(5);
                 },
               ),
-              SizedBox(width: 10),
-              Icon(
-                Icons.perm_identity_rounded,
-                size: 24.0,
-                color: Colors.black,
-              ),
-              SizedBox(width: screenSize.width * 0.10),
+              SizedBox(width: screenSize.width * 0.07),
               IconButton(
                 onPressed: () async {
                   await launchUrl(
@@ -404,20 +397,6 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                 },
                 icon: FaIcon(
                   FontAwesomeIcons.facebook,
-                  size: 24.0,
-                  color: Colors.black,
-                ),
-              ),
-              SizedBox(width: 5),
-              IconButton(
-                onPressed: () async {
-                  await launchUrl(
-                    Uri.parse('https://www.instagram.com/amestec.fest/'),
-                    webOnlyWindowName: '_blank',
-                  );
-                },
-                icon: FaIcon(
-                  FontAwesomeIcons.twitter,
                   size: 24.0,
                   color: Colors.black,
                 ),
@@ -443,7 +422,3 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
     );
   }
 }
-
- 
-
-

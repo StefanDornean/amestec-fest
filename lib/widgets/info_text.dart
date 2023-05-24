@@ -1,35 +1,26 @@
+import 'package:explore/widgets/responsive.dart';
 import 'package:flutter/material.dart';
 
 class InfoText extends StatelessWidget {
-  final String type;
-  final String text;
+  const InfoText({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
 
-  InfoText({required this.type, required this.text});
+  final String text;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+    return Container(
+      width: 300,
+      child: Wrap(children: [
         Text(
-          '$type: ',
+          text,
+          textAlign: TextAlign.justify,
           style: TextStyle(
-            color: Colors.blueGrey.shade300,
-            fontSize: 16,
-          ),
+              color: Colors.black, fontSize: 16, fontFamily: 'ArgentumSans'),
         ),
-        Flexible(
-          child: Text(
-            text,
-            style: TextStyle(
-              color: Colors.blueGrey.shade100,
-              fontSize: 16,
-            ),
-          ),
-        )
-      ],
+      ]),
     );
   }
 }
