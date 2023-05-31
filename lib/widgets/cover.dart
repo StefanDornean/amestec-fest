@@ -1,5 +1,6 @@
 import 'package:explore/widgets/responsive.dart';
 import 'package:flutter/material.dart';
+import 'package:explore/widgets/responsive.dart';
 
 class CoverPage extends StatefulWidget {
   const CoverPage({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class _CoverPage extends State<CoverPage> {
     var screenSize = MediaQuery.of(context).size;
 
     return ResponsiveWidget.isSmallScreen(context)
+    
         ? Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
            
@@ -55,11 +57,13 @@ class _CoverPage extends State<CoverPage> {
               ),
             ],
           )
+          
         : Row(
         
             children: [
       
              Container(
+              
                 child: SizedBox(
                   height: screenSize.height * 0.5,
                   width: screenSize.width / 1.8,
