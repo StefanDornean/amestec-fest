@@ -16,7 +16,6 @@ class _CoverPage extends State<CoverPage> {
     var screenSize = MediaQuery.of(context).size;
 
     return ResponsiveWidget.isSmallScreen(context)
-    
         ? Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -26,29 +25,13 @@ class _CoverPage extends State<CoverPage> {
                     child: SizedBox(
                       height: screenSize.height * 0.4,
                       width: screenSize.width * 0.90,
-                      child: LayoutBuilder(builder:
-                          (BuildContext context, BoxConstraints constraints) {
-                        return ClipRRect(
-                          borderRadius: BorderRadius.circular(100),
-                          child: IgnorePointer(
-                            ignoring: true,
-                            child: YoutubePlayer(
-                              enableFullScreenOnVerticalDrag: false,
-                              controller: YoutubePlayerController.fromVideoId(
-                                videoId: '7OWhULtMYO4',
-                                autoPlay: true,
-                                params: const YoutubePlayerParams(
-                                  showFullscreenButton: false,
-                                  showControls: false,
-                                  showVideoAnnotations: false,
-                                  loop: true,
-                                  pointerEvents: PointerEvents.none,
-                                ),
-                              ),
-                            ),
-                          ),
-                        );
-                      }),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(100),
+                        child: Image.asset(
+                          'assets/images/cover1.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                   ),
                   Padding(
@@ -103,20 +86,17 @@ class _CoverPage extends State<CoverPage> {
               ),
             ],
           )
-          
         : Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-      
-             Container(
-              
+              Container(
                 child: SizedBox(
                   height: screenSize.height * 0.5,
                   width: screenSize.width / 1.8,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(100),
                     child: Image.asset(
-                      'assets/images/cover.jpg',
+                      'assets/images/cover1.jpg',
                       fit: BoxFit.cover,
                     ),
                   ),
