@@ -1,7 +1,7 @@
 import 'package:date_count_down/date_count_down.dart';
 import 'package:explore/widgets/responsive.dart';
 import 'package:flutter/material.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+import 'package:explore/widgets/responsive.dart';
 
 class CoverPage extends StatefulWidget {
   const CoverPage({Key? key}) : super(key: key);
@@ -16,6 +16,7 @@ class _CoverPage extends State<CoverPage> {
     var screenSize = MediaQuery.of(context).size;
 
     return ResponsiveWidget.isSmallScreen(context)
+    
         ? Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -102,30 +103,24 @@ class _CoverPage extends State<CoverPage> {
               ),
             ],
           )
+          
         : Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                height: screenSize.height * 0.5,
-                width: screenSize.width / 2,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                ),
-                child: LayoutBuilder(builder:
-                    (BuildContext context, BoxConstraints constraints) {
-                  return ClipRRect(
+      
+             Container(
+              
+                child: SizedBox(
+                  height: screenSize.height * 0.5,
+                  width: screenSize.width / 1.8,
+                  child: ClipRRect(
                     borderRadius: BorderRadius.circular(100),
-                    child: YoutubePlayer(
-                      controller: YoutubePlayerController.fromVideoId(
-                        videoId: '7OWhULtMYO4',
-                        autoPlay: true,
-                        startSeconds: 0,
-                        params: const YoutubePlayerParams(
-                            showFullscreenButton: true),
-                      ),
+                    child: Image.asset(
+                      'assets/images/cover.jpg',
+                      fit: BoxFit.cover,
                     ),
-                  );
-                }),
+                  ),
+                ),
               ),
               SizedBox(width: 25),
               Container(

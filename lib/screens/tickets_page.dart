@@ -41,34 +41,291 @@ class _TicketsPageState extends State<TicketsPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                height: screenSize.height * 0.5,
-                width: screenSize.width / 6,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: Color(0xFFC32B68),
+                child: Column(
+                  children: [
+                    Container(
+                      height: screenSize.height / 4,
+                      width: screenSize.width * 0.3,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: Colors.pink,
+                      ),
+                      child: Column(),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        // Handle button click for the first figure
+                      },
+                      child: Column(
+                        children: [
+                          Text(
+                            'Early Bird General Access Pass',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20,),
+                    GestureDetector(
+                      onTap: null, // Disable tap gesture
+                      child: Text(
+                        '\150 RON',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                      SizedBox(height: 4,),
+                    GestureDetector(
+                      onTap: null, // Disable tap gesture
+                      child: Text(
+                        '72h',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                     SizedBox(height: 15),
+                  
+                       InkWell(
+                        onTap: () {
+
+                        },
+                      
+                    
+                  /*  InkWell(
+                      onTap: () {
+                        // Add your desired onTap functionality here
+                      },*/
+                      child: Container(
+                         
+                        decoration: BoxDecoration(
+                 
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                        
+                          child: Text(
+                         
+                            'Buy now',
+                            style: TextStyle(
+                              fontFamily: 'LuloClean',
+                              color: Colors.black,
+                            ),
+                            
+                          ),
+                          
+                        ),
+                        
+                      ),
+                  
+                    ),
+                
+                  ],
                 ),
-                child: Column(),
               ),
               Container(
-                height: screenSize.height * 0.5,
-                width: screenSize.width / 6,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: Color(0xFFC32B68),
+                child: Column(
+                  children: [
+                    Container(
+                      height: screenSize.height / 4,
+                      width: screenSize.width * 0.3,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: Colors.pink,
+                      ),
+                      child: Column(),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        // Handle button click for the second figure
+                      },
+                      child: Column(
+                        children: [
+                          Text(
+                            'General Access Pass',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                      SizedBox(height: 20,),
+                    GestureDetector(
+                      onTap: null, // Disable tap gesture
+                      child: Text(
+                        '\300 RON',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                     SizedBox(height: 4,),
+                    GestureDetector(
+                      onTap: null, // Disable tap gesture
+                      child: Text(
+                        '72h',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                      SizedBox(height: 15),
+                  
+                       InkWell(
+                        onTap: () {
+
+                        },
+                      
+                    
+                  /*  InkWell(
+                      onTap: () {
+                        // Add your desired onTap functionality here
+                      },*/
+                      child: Container(
+                         
+                        decoration: BoxDecoration(
+                 
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                        
+                          child: Text(
+                         
+                            'Buy now',
+                            style: TextStyle(
+                              fontFamily: 'LuloClean',
+                              color: Colors.black,
+                            ),
+                            
+                          ),
+                          
+                        ),
+                        
+                      ),
+                  
+                    ),
+                
+                  
+                  ],
                 ),
-                child: Column(),
               ),
               Container(
-                height: screenSize.height * 0.5,
-                width: screenSize.width / 6,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: Color(0xFFC32B68),
+                child: Column(
+                  children: [
+                    Container(
+                      height: screenSize.height / 4,
+                      width: screenSize.width * 0.3,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: Colors.pink,
+                      ),
+                      child: Column(),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        // Handle button click for the third figure
+                      },
+                      child: Column(
+                        children: [
+                          Text(
+                            'Camping Pass',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                      SizedBox(height: 20,),
+                    GestureDetector(
+                      onTap: null, // Disable tap gesture
+                      child: Text(
+                        '\50 RON',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
+
+                     SizedBox(height: 4,),
+                    GestureDetector(
+                      onTap: null, // Disable tap gesture
+                      child: Text(
+                        '72h',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                     SizedBox(height: 15),
+                  
+                       InkWell(
+                        onTap: () {
+
+                        },
+                      
+                    
+                  /*  InkWell(
+                      onTap: () {
+                        // Add your desired onTap functionality here
+                      },*/
+                      child: Container(
+                         
+                        decoration: BoxDecoration(
+                 
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                        
+                          child: Text(
+                         
+                            'Buy now',
+                            style: TextStyle(
+                              fontFamily: 'LuloClean',
+                              color: Colors.black,
+                            ),
+                            
+                          ),
+                          
+                        ),
+                        
+                      ),
+                  
+                    ),
+                
+                  ],
                 ),
-                child: Column(),
-              )
+              ),
             ],
-          )
+          ),
         ],
       ),
     );
