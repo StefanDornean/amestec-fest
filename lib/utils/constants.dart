@@ -6,6 +6,7 @@ final List<Map<String, dynamic>> artists = [
   {
     'name': 'Chiribaw',
     'imageUrl': 'assets/images/artist-Chiribaw.png',
+    'description': 'tralala',
   },
   {
     'name': 'DJ Sino',
