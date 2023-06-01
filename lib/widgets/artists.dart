@@ -18,19 +18,20 @@ class _ArtistsPage extends State<ArtistsPage> {
 
   @override
   Widget build(BuildContext context) {
-    int artistPerRow = ResponsiveWidget.isSmallScreen(context) ? 4 : 5;
+    int artistPerRow = ResponsiveWidget.isSmallScreen(context) ? 1 : 3;
+
     return SizedBox(
       width: double.infinity,
       child: GridView.builder(
         physics: NeverScrollableScrollPhysics(), // Disable scrolling
         primary: false,
         shrinkWrap: true,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: artistPerRow,
           mainAxisSpacing: 0,
           crossAxisSpacing: 0,
         ),
-        itemCount: artists.length,
+        itemCount: 3,
         itemBuilder: (context, index) {
           return ArtistCard(
             name: artists[index]['name'],
@@ -66,7 +67,7 @@ class ArtistCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             AspectRatio(
-              aspectRatio: 3 / 3,
+              aspectRatio: 1,
               child: Image.asset(
                 imageUrl,
                 fit: BoxFit.cover,

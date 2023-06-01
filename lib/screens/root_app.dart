@@ -211,54 +211,54 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                     ),
                   ),
                   SizedBox(height: 20),
-                  // InkWell(
-                  //   onTap: () {
-                  //     _controller.reverse();
-                  //     Navigator.pop(context);
-                  //     onPageChanged(1);
-                  //   },
-                  //   child: Text(
-                  //     'TICKETS',
-                  //     style: TextStyle(
-                  //         fontFamily: 'LuloClean',
-                  //         color:
-                  //             activeTabIndex == 1 ? Colors.pink : Colors.white,
-                  //         fontSize: 22),
-                  //   ),
-                  // ),
-                  // SizedBox(height: 20),
-                  // InkWell(
-                  //   onTap: () {
-                  //     _controller.reverse();
-                  //     Navigator.pop(context);
-                  //     onPageChanged(2);
-                  //   },
-                  //   child: Text(
-                  //     'ARTISTS',
-                  //     style: TextStyle(
-                  //         fontFamily: 'LuloClean',
-                  //         color:
-                  //             activeTabIndex == 2 ? Colors.pink : Colors.white,
-                  //         fontSize: 22),
-                  //   ),
-                  // ),
-                  // SizedBox(height: 20),
-                  // InkWell(
-                  //   onTap: () {
-                  //     _controller.reverse();
-                  //     Navigator.pop(context);
-                  //     onPageChanged(3);
-                  //   },
-                  //   child: Text(
-                  //     'NEWS',
-                  //     style: TextStyle(
-                  //         fontFamily: 'LuloClean',
-                  //         color:
-                  //             activeTabIndex == 3 ? Colors.pink : Colors.white,
-                  //         fontSize: 22),
-                  //   ),
-                  // ),
-                  //SizedBox(height: 20),
+                  InkWell(
+                    onTap: () {
+                      _controller.reverse();
+                      Navigator.pop(context);
+                      onPageChanged(1);
+                    },
+                    child: Text(
+                      'TICKETS',
+                      style: TextStyle(
+                          fontFamily: 'LuloClean',
+                          color:
+                              activeTabIndex == 1 ? Colors.pink : Colors.white,
+                          fontSize: 22),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  InkWell(
+                    onTap: () {
+                      _controller.reverse();
+                      Navigator.pop(context);
+                      onPageChanged(2);
+                    },
+                    child: Text(
+                      'ARTISTS',
+                      style: TextStyle(
+                          fontFamily: 'LuloClean',
+                          color:
+                              activeTabIndex == 2 ? Colors.pink : Colors.white,
+                          fontSize: 22),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  InkWell(
+                    onTap: () {
+                      _controller.reverse();
+                      Navigator.pop(context);
+                      onPageChanged(3);
+                    },
+                    child: Text(
+                      'NEWS',
+                      style: TextStyle(
+                          fontFamily: 'LuloClean',
+                          color:
+                              activeTabIndex == 3 ? Colors.pink : Colors.white,
+                          fontSize: 22),
+                    ),
+                  ),
+                  SizedBox(height: 20),
                   InkWell(
                     onTap: () {
                       _controller.reverse();
