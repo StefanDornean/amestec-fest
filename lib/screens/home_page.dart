@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
           SizedBox(height: 15),
           CoverPage(),
           Heading(screenSize: screenSize, text: 'Artists'),
-          ArtistsPage(),
+          ArtistsHomePage(),
           Heading(screenSize: screenSize, text: 'Acomodation'),
           Acomodation(
             screenSize: screenSize,

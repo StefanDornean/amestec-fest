@@ -1,16 +1,17 @@
 import 'package:explore/widgets/responsive.dart';
+import 'package:explore/widgets/showmore_button.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/constants.dart';
 
-class ArtistsPage extends StatefulWidget {
-  const ArtistsPage({Key? key}) : super(key: key);
+class ArtistsHomePage extends StatefulWidget {
+  const ArtistsHomePage({Key? key}) : super(key: key);
 
   @override
-  _ArtistsPage createState() => _ArtistsPage();
+  _ArtistsHomePage createState() => _ArtistsHomePage();
 }
 
-class _ArtistsPage extends State<ArtistsPage> {
+class _ArtistsHomePage extends State<ArtistsHomePage> {
   @override
   void initState() {
     super.initState();
@@ -19,29 +20,37 @@ class _ArtistsPage extends State<ArtistsPage> {
   @override
   Widget build(BuildContext context) {
     int artistPerRow = ResponsiveWidget.isSmallScreen(context) ? 1 : 3;
+    var screenSize = MediaQuery.of(context).size;
 
-    return SizedBox(
-      width: double.infinity,
-      child: GridView.builder(
-        physics: NeverScrollableScrollPhysics(), // Disable scrolling
-        primary: false,
-        shrinkWrap: true,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: artistPerRow,
-          mainAxisSpacing: 0,
-          crossAxisSpacing: 0,
-        ),
-        itemCount: 3,
-        itemBuilder: (context, index) {
-          return ArtistCard(
-            name: artists[index]['name'],
-            imageUrl: artists[index]['imageUrl'],
-            onTap: () {
-              // Handle Artist tap
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        SizedBox(
+          width: double.infinity,
+          child: GridView.builder(
+            physics: NeverScrollableScrollPhysics(), // Disable scrolling
+            primary: false,
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: artistPerRow,
+              mainAxisSpacing: 0,
+              crossAxisSpacing: 0,
+            ),
+            itemCount: 3,
+            itemBuilder: (context, index) {
+              return ArtistCard(
+                name: artists[index]['name'],
+                imageUrl: artists[index]['imageUrl'],
+                onTap: () {
+                  // Handle Artist tap
+                },
+              );
             },
-          );
-        },
-      ),
+          ),
+        ),
+        ShowMoreButton(text: "Show More", screenSize: screenSize),
+      ],
     );
   }
 }

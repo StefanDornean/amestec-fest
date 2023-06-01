@@ -7,6 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../widgets/responsive.dart';
+import 'artists_page.dart';
 import 'home_page.dart';
 import 'location_page.dart';
 import 'news_page.dart';
@@ -354,7 +355,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                   ),
                 ),
                 onPressed: () {
-                  //onPageChanged(1);
+                  onPageChanged(1);
                 },
               ),
               SizedBox(width: 5),
