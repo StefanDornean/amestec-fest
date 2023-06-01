@@ -21,7 +21,9 @@ class ShowMoreButton extends StatelessWidget {
       padding: EdgeInsets.only(
         top: screenSize.height / 25,
         bottom: screenSize.height / 40,
-        left: ResponsiveWidget.isSmallScreen(context)? 20 : screenSize.width * 0.25,
+        left: ResponsiveWidget.isSmallScreen(context)
+            ? 20
+            : screenSize.width * 0.25,
       ),
       child: InkWell(
         child: SizedBox(
