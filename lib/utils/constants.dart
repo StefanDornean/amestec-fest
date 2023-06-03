@@ -3,6 +3,21 @@ final List<Map<String, dynamic>> artists = [
   //   'name': 'Alexandra Drobota',
   //   'imageUrl': 'assets/images/artist-AlexandraD.png',
   // },
+ {
+     'name' : 'Macanache',
+     'imageUrl': 'assets/images/artist-Macanache.png',
+     'description': '',
+  },
+  {
+    'name': 'Argatu',
+    'imageUrl': 'assets/images/artist-Argatu.png',
+    'description':'',
+  },
+  {
+    'name': 'Sllash & Doppe',
+    'imageUrl': 'assets/images/artist-Sllash&Doppe.png',
+    'description': '',
+  },
   {
     'name': 'Chiribaw',
     'imageUrl': 'assets/images/artist-Chiribaw.png',
