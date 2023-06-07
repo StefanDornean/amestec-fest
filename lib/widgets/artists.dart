@@ -1,7 +1,10 @@
+import 'package:explore/custom/custom_button.dart';
 import 'package:explore/widgets/responsive.dart';
 import 'package:explore/widgets/showmore_button.dart';
 import 'package:flutter/material.dart';
 
+import '../custom/custom_img_card.dart';
+import '../custom/custom_padding.dart';
 import '../utils/constants.dart';
 
 class ArtistsHomePage extends StatefulWidget {
@@ -39,52 +42,21 @@ class _ArtistsHomePage extends State<ArtistsHomePage> {
             ),
             itemCount: 3,
             itemBuilder: (context, index) {
-              return ArtistCard(
-                name: artists[index]['name'],
-                imageUrl: artists[index]['imageUrl'],
-                onTap: () {
-                  // Handle Artist tap
-                },
-              );
+              return CustomImgCard(
+                  imgUrl: artists[index]['imageUrl'], function: () => {});
             },
           ),
         ),
-        ShowMoreButton(text: "Show More", screenSize: screenSize),
-      ],
-    );
-  }
-}
-
-class ArtistCard extends StatelessWidget {
-  final String name;
-  final String imageUrl;
-  final VoidCallback onTap;
-
-  const ArtistCard({
-    required this.name,
-    required this.imageUrl,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.zero,
-      child: InkWell(
-        onTap: onTap,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            AspectRatio(
-              aspectRatio: 1,
-              child: Image.asset(
-                imageUrl,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ],
+        CustomPadding(
+          screenSize: screenSize,
+          left: paddingLeftHeader,
+          leftSmall: paddingLeftHeaderSmall,
+          top: 30,
+          bottom: 30,
+          childWidget: CustomButton(
+              text: "Show More", function: () => {}), //onPageChanged(index:2)
         ),
-      ),
+      ],
     );
   }
 }

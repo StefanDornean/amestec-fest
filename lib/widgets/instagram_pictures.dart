@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../custom/custom_img_card.dart';
 import '../utils/constants.dart';
 import 'artists.dart';
 
@@ -75,16 +76,14 @@ class _InstagramPicturesPage extends State<InstagramPicturesPage> {
         ),
         itemCount: instaFeed.length,
         itemBuilder: (context, index) {
-          return ArtistCard(
-            name: '',
-            imageUrl: instaFeed[index],
-            onTap: () async {
-              await launchUrl(
-                Uri.parse('https://www.instagram.com/amestec.fest/'),
-                webOnlyWindowName: '_blank',
-              );
-            },
-          );
+          return CustomImgCard(
+              imgUrl: instaFeed[index],
+              function: () async {
+                await launchUrl(
+                  Uri.parse('https://www.instagram.com/amestec.fest/'),
+                  webOnlyWindowName: '_blank',
+                );
+              });
         },
       ),
     );

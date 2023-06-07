@@ -8,11 +8,9 @@ import 'package:explore/widgets/featured_tiles.dart';
 import 'package:explore/widgets/floating_quick_access_bar.dart';
 import 'package:explore/widgets/responsive.dart';
 import 'package:flutter/material.dart';
-
-import '../mywidgets/count_down.dart';
+import '../custom/custom_header.dart';
 import '../widgets/acomodation.dart';
 import '../widgets/artists.dart';
-import '../widgets/instagram_pictures.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -50,19 +48,17 @@ class _HomePageState extends State<HomePage> {
         children: [
           SizedBox(height: 15),
           CoverPage(),
-          Heading(screenSize: screenSize, text: 'Artists'),
+          CustomHeader(screenSize: screenSize, text: 'Artists'),
           ArtistsHomePage(),
-          Heading(screenSize: screenSize, text: 'Acomodation'),
-          Acomodation(
-            screenSize: screenSize,
-          ),
+          CustomHeader(screenSize: screenSize, text: 'Acomodation'),
+          Acomodation(screenSize: screenSize),
           SizedBox(height: 25),
-          Heading(
-              screenSize: screenSize,
-              text: 'Instagram Feed',
-              bgColor: Colors.black,
-              textColor: Colors.white),
-          InstagramPicturesPage(),
+          // CustomHeader(
+          //     screenSize: screenSize,
+          //     text: 'Instagram Feed',
+          //     bgColor: Colors.black,
+          //     headerColor: Colors.white),
+          //InstagramPicturesPage(),
           SizedBox(height: 25),
           BottomBar(),
         ],

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../custom/custom_news_card.dart';
+import '../utils/constants.dart';
 import '../widgets/heading.dart';
+import '../widgets/responsive.dart';
 
 class NewsPage extends StatefulWidget {
   const NewsPage({Key? key}) : super(key: key);
@@ -28,49 +31,31 @@ class _NewsPageState extends State<NewsPage> {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
+    Size screenSize = MediaQuery.of(context).size;
 
     return SingleChildScrollView(
       controller: _scrollController,
       physics: ClampingScrollPhysics(),
       child: Column(
-        children: [
-          Heading(screenSize: screenSize, text: 'News'),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                height: screenSize.height * 0.5,
-                width: screenSize.width / 6,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: Color(0xFFC32B68),
-                ),
-                child: Column(),
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            GridView.builder(
+              physics: NeverScrollableScrollPhysics(), // Disable scrolling
+              primary: false,
+              shrinkWrap: true,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: ResponsiveWidget.isSmallScreen(context) ? 1 : 3,
               ),
-              Container(
-                height: screenSize.height * 0.5,
-                width: screenSize.width / 6,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: Color(0xFFC32B68),
-                ),
-                child: Column(),
-              ),
-              Container(
-                height: screenSize.height * 0.5,
-                width: screenSize.width / 6,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: Color(0xFFC32B68),
-                ),
-                child: Column(),
-              )
-            ],
-          )
-        ],
-      ),
+              itemCount: news.length,
+              itemBuilder: (context, index) {
+                return CustomNewsCard(
+                  screenSize: screenSize,
+                  news: news[index],
+                );
+              },
+            ),
+          ]),
     );
   }
 }

@@ -2,6 +2,9 @@ import 'package:explore/widgets/info_text.dart';
 import 'package:explore/widgets/responsive.dart';
 import 'package:flutter/material.dart';
 
+import '../custom/custom_info_text.dart';
+import '../custom/custom_text.dart';
+
 class Acomodation extends StatelessWidget {
   const Acomodation({Key? key, required this.screenSize});
   final Size screenSize;
@@ -18,19 +21,35 @@ class Acomodation extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                InfoText(text: text1),
+                CustomInfoText(screenSize: screenSize, text: text1),
                 SizedBox(height: 10),
-                InfoText(text: text2),
+                CustomInfoText(screenSize: screenSize, text: text2),
               ],
             )
           : Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                InfoText(text: text1),
-                SizedBox(width: 30),
-                InfoText(text: text2),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomInfoText(screenSize: screenSize, text: text1)
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomInfoText(screenSize: screenSize, text: text2)
+                    ],
+                  ),
+                ),
+                // CustomInfoText(screenSize: screenSize, text: text1),
+                // SizedBox(width: 30),
+                // CustomInfoText(screenSize: screenSize, text: text2),
               ],
             ),
     );

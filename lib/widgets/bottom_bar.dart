@@ -35,7 +35,7 @@ class _BottomBarState extends State<BottomBar> {
           child: Container(
             child: Center(
               child: Text(
-                'Copyright © 2023 | AMESTEC',
+                'Copyright © 2023 | AMESTEC Organizație Non Profit',
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,

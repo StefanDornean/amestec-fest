@@ -1,6 +1,8 @@
 import 'package:explore/widgets/responsive.dart';
 import 'package:flutter/material.dart';
 
+import '../custom/custom_text.dart';
+
 class InfoText extends StatelessWidget {
   const InfoText({
     Key? key,
@@ -12,15 +14,7 @@ class InfoText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
-      child: Wrap(children: [
-        Text(
-          text,
-          textAlign: TextAlign.justify,
-          style: TextStyle(
-              color: Colors.black, fontSize: 16, fontFamily: 'ArgentumSans'),
-        ),
-      ]),
+      child: Wrap(children: [CustomText(text: text)]),
     );
   }
 }

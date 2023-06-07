@@ -1,16 +1,10 @@
-import 'package:explore/screens/about_page.dart';
-import 'package:explore/screens/tickets_page.dart';
-import 'package:explore/widgets/artists.dart';
-import 'package:explore/widgets/info_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../custom/custom_text.dart';
+import '../utils/constants.dart';
 import '../widgets/responsive.dart';
-import 'artists_page.dart';
-import 'home_page.dart';
-import 'location_page.dart';
-import 'news_page.dart';
 
 class RootApp extends StatefulWidget {
   const RootApp({Key? key}) : super(key: key);
@@ -20,45 +14,7 @@ class RootApp extends StatefulWidget {
 }
 
 class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
-  final ScrollController _scrollController = ScrollController();
-  double _scrollPosition = 0;
-  double _opacity = 0;
-
   get onClose => null;
-
-  _scrollListener() {
-    setState(() {
-      _scrollPosition = _scrollController.position.pixels;
-    });
-  }
-
-  int activeTabIndex = 0;
-  List barItems = [
-    {
-      "title": "Acasa",
-      "page": HomePage(),
-    },
-    {
-      "title": "Tickets",
-      "page": TicketsPage(),
-    },
-    {
-      "title": "Artists",
-      "page": ArtistsPage(),
-    },
-    {
-      "title": "News",
-      "page": NewsPage(),
-    },
-    {
-      "title": "About",
-      "page": AboutPage(),
-    },
-    {
-      "title": "Location",
-      "page": LocationPage(),
-    },
-  ];
 
 //====== set animation=====
   late final AnimationController _controller = AnimationController(
@@ -72,7 +28,6 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
 
   @override
   void initState() {
-    _scrollController.addListener(_scrollListener);
     super.initState();
     _controller.forward();
   }
@@ -102,9 +57,6 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    _opacity = _scrollPosition < screenSize.height * 0.40
-        ? _scrollPosition / (screenSize.height * 0.80)
-        : 1;
 
     return Scaffold(
         appBar: ResponsiveWidget.isSmallScreen(context)
@@ -121,14 +73,11 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                           height: 40.0,
                         ),
                         SizedBox(width: 5),
-                        Text(
-                          '18-20 August 2023',
-                          style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.black,
-                              fontFamily: 'LuloClean',
-                              fontWeight: FontWeight.bold),
-                        ),
+                        CustomText(
+                          text: dataFestival,
+                          fontSize: 12,
+                          weight: FontWeight.bold,
+                        )
                       ],
                     ),
                     Row(
@@ -315,14 +264,10 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
+          SizedBox(height: 100),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(
-                width: 130,
-                child: InfoText(text: "Organizație NON PROFIT"),
-              ),
-              SizedBox(width: 10),
               InkWell(
                 onTap: () {
                   onPageChanged(0);
@@ -333,26 +278,19 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                 ),
               ),
               SizedBox(width: 10),
-              Text(
-                '18 - 20 august 2023',
-                style: TextStyle(
-                  fontFamily: 'LuloClean',
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 12,
-                ),
+              CustomText(
+                text: dataFestival,
+                weight: FontWeight.bold,
+                font: headerFont,
+                fontSize: 12,
               ),
               SizedBox(width: screenSize.width * 0.07),
               TextButton(
-                child: Text(
-                  'TICKETS',
-                  maxLines: 20,
-                  style: TextStyle(
-                    fontFamily: 'LuloClean',
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                  ),
+                child: CustomText(
+                  text: 'TICKETS',
+                  weight: FontWeight.bold,
+                  font: headerFont,
+                  fontSize: 12,
                 ),
                 onPressed: () {
                   onPageChanged(1);
@@ -360,14 +298,11 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
               ),
               SizedBox(width: 5),
               TextButton(
-                child: Text(
-                  'ABOUT',
-                  style: TextStyle(
-                    fontFamily: 'LuloClean',
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                  ),
+                child: CustomText(
+                  text: 'ABOUT',
+                  weight: FontWeight.bold,
+                  font: headerFont,
+                  fontSize: 12,
                 ),
                 onPressed: () {
                   onPageChanged(4);
@@ -375,17 +310,26 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
               ),
               SizedBox(width: 5),
               TextButton(
-                child: Text(
-                  'LOCATION',
-                  style: TextStyle(
-                    fontFamily: 'LuloClean',
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                  ),
+                child: CustomText(
+                  text: 'LOCATION',
+                  weight: FontWeight.bold,
+                  font: headerFont,
+                  fontSize: 12,
                 ),
                 onPressed: () {
                   onPageChanged(5);
+                },
+              ),
+              SizedBox(width: 5),
+              TextButton(
+                child: CustomText(
+                  text: 'ARTISTS',
+                  weight: FontWeight.bold,
+                  font: headerFont,
+                  fontSize: 12,
+                ),
+                onPressed: () {
+                  onPageChanged(2);
                 },
               ),
               SizedBox(width: screenSize.width * 0.07),

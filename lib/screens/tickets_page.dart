@@ -1,5 +1,10 @@
+import 'package:explore/custom/custom_button.dart';
+import 'package:explore/custom/custom_text.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
+import '../utils/constants.dart';
+import '../widgets/bottom_bar.dart';
 import '../widgets/heading.dart';
 import '../widgets/responsive.dart';
 
@@ -39,529 +44,95 @@ class _TicketsPageState extends State<TicketsPage> {
           Heading(screenSize: screenSize, text: 'Tickets'),
           ResponsiveWidget.isSmallScreen(context)
               ? Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            height: screenSize.height / 4,
-                            width: screenSize.width * 0.3,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100),
-                              color: Colors.pink,
-                            ),
-                            child: Column(),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              // Handle button click for the first figure
-                            },
-                            child: Column(
-                              children: [
-                                Text(
-                                  'Early Bird General Access Pass',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          GestureDetector(
-                            onTap: null, // Disable tap gesture
-                            child: Text(
-                              '\150 RON',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 4,
-                          ),
-                          GestureDetector(
-                            onTap: null, // Disable tap gesture
-                            child: Text(
-                              '72h',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 15),
-                          InkWell(
-                            onTap: () {},
-
-                            /*  InkWell(
-                      onTap: () {
-                        // Add your desired onTap functionality here
-                      },*/
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.black,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Buy now',
-                                  style: TextStyle(
-                                    fontFamily: 'LuloClean',
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            height: screenSize.height / 4,
-                            width: screenSize.width * 0.3,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100),
-                              color: Colors.pink,
-                            ),
-                            child: Column(),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              // Handle button click for the second figure
-                            },
-                            child: Column(
-                              children: [
-                                Text(
-                                  'General Access Pass',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          GestureDetector(
-                            onTap: null, // Disable tap gesture
-                            child: Text(
-                              '\300 RON',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 4,
-                          ),
-                          GestureDetector(
-                            onTap: null, // Disable tap gesture
-                            child: Text(
-                              '72h',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 15),
-                          InkWell(
-                            onTap: () {},
-
-                            /*  InkWell(
-                      onTap: () {
-                        // Add your desired onTap functionality here
-                      },*/
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.black,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Buy now',
-                                  style: TextStyle(
-                                    fontFamily: 'LuloClean',
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            height: screenSize.height / 4,
-                            width: screenSize.width * 0.3,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100),
-                              color: Colors.pink,
-                            ),
-                            child: Column(),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              // Handle button click for the third figure
-                            },
-                            child: Column(
-                              children: [
-                                Text(
-                                  'Camping Pass',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          GestureDetector(
-                            onTap: null, // Disable tap gesture
-                            child: Text(
-                              '\50 RON',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 4,
-                          ),
-                          GestureDetector(
-                            onTap: null, // Disable tap gesture
-                            child: Text(
-                              '72h',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 15),
-                          InkWell(
-                            onTap: () {},
-
-                            /*  InkWell(
-                      onTap: () {
-                        // Add your desired onTap functionality here
-                      },*/
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.black,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Buy now',
-                                  style: TextStyle(
-                                    fontFamily: 'LuloClean',
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    TicketCard(
+                        text1: ticket1_text1,
+                        text2: ticket1_text2,
+                        color: pinkCode),
+                    TicketCard(
+                        text1: ticket2_text1,
+                        text2: ticket2_text2,
+                        color: blueCode),
+                    //TicketCard(text1: ticket3_text1, text2: ticket3_text2),
                   ],
                 )
               : Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            height: screenSize.height / 4,
-                            width: screenSize.width * 0.3,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100),
-                              color: Colors.pink,
-                            ),
-                            child: Column(),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              // Handle button click for the first figure
-                            },
-                            child: Column(
-                              children: [
-                                Text(
-                                  'Early Bird General Access Pass',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          GestureDetector(
-                            onTap: null, // Disable tap gesture
-                            child: Text(
-                              '\150 RON',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 4,
-                          ),
-                          GestureDetector(
-                            onTap: null, // Disable tap gesture
-                            child: Text(
-                              '72h',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 15),
-                          InkWell(
-                            onTap: () {},
-
-                            /*  InkWell(
-                      onTap: () {
-                        // Add your desired onTap functionality here
-                      },*/
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.black,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Buy now',
-                                  style: TextStyle(
-                                    fontFamily: 'LuloClean',
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            height: screenSize.height / 4,
-                            width: screenSize.width * 0.3,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100),
-                              color: Colors.pink,
-                            ),
-                            child: Column(),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              // Handle button click for the second figure
-                            },
-                            child: Column(
-                              children: [
-                                Text(
-                                  'General Access Pass',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          GestureDetector(
-                            onTap: null, // Disable tap gesture
-                            child: Text(
-                              '\300 RON',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 4,
-                          ),
-                          GestureDetector(
-                            onTap: null, // Disable tap gesture
-                            child: Text(
-                              '72h',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 15),
-                          InkWell(
-                            onTap: () {},
-
-                            /*  InkWell(
-                      onTap: () {
-                        // Add your desired onTap functionality here
-                      },*/
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.black,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Buy now',
-                                  style: TextStyle(
-                                    fontFamily: 'LuloClean',
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            height: screenSize.height / 4,
-                            width: screenSize.width * 0.3,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100),
-                              color: Colors.pink,
-                            ),
-                            child: Column(),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              // Handle button click for the third figure
-                            },
-                            child: Column(
-                              children: [
-                                Text(
-                                  'Camping Pass',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          GestureDetector(
-                            onTap: null, // Disable tap gesture
-                            child: Text(
-                              '\50 RON',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 4,
-                          ),
-                          GestureDetector(
-                            onTap: null, // Disable tap gesture
-                            child: Text(
-                              '72h',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 15),
-                          InkWell(
-                            onTap: () {},
-
-                            /*  InkWell(
-                      onTap: () {
-                        // Add your desired onTap functionality here
-                      },*/
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.black,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Buy now',
-                                  style: TextStyle(
-                                    fontFamily: 'LuloClean',
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    TicketCard(
+                        text1: ticket1_text1,
+                        text2: ticket1_text2,
+                        color: pinkCode),
+                    SizedBox(width: 30),
+                    TicketCard(
+                        text1: ticket2_text1,
+                        text2: ticket2_text2,
+                        color: blueCode),
+                    //TicketCard(text1: ticket3_text1, text2: ticket3_text2),
                   ],
                 ),
+          SizedBox(height: 50),
+          BottomBar(),
         ],
       ),
     );
+  }
+}
+
+class TicketCard extends StatelessWidget {
+  //const TicketCard();
+  final String text1;
+  final String text2;
+  final int color;
+
+  const TicketCard({
+    required this.text1,
+    required this.text2,
+    required this.color,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+    return Column(children: [
+      Container(
+        height: screenSize.height / 2,
+        width: screenSize.width * 0.3,
+        padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(100),
+          color: Color(color),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(height: 20),
+            CustomText(
+              text: text1,
+              font: headerFont,
+              fontSize: headerFontSize,
+              align: TextAlign.center,
+              color: Colors.white,
+            ),
+            SizedBox(height: 20),
+            CustomText(text: text2, font: headerFont, color: Colors.white),
+          ],
+        ),
+      ),
+      SizedBox(height: 15),
+      CustomButton(
+          text: buyNow,
+          function: () async {
+            await launchUrl(
+              Uri.parse(iaBiletLink),
+              webOnlyWindowName: '_blank',
+            );
+          })
+    ]);
   }
 }

@@ -1,7 +1,9 @@
 import 'package:date_count_down/date_count_down.dart';
 import 'package:explore/widgets/responsive.dart';
 import 'package:flutter/material.dart';
-import 'package:explore/widgets/responsive.dart';
+
+import '../custom/custom_button.dart';
+import '../utils/constants.dart';
 
 class CoverPage extends StatefulWidget {
   const CoverPage({Key? key}) : super(key: key);
@@ -50,36 +52,30 @@ class _CoverPage extends State<CoverPage> {
                         borderRadius: BorderRadius.circular(180),
                         color: Color.fromARGB(255, 204, 47, 99),
                       ),
-                      child: Center(
-                        child: GestureDetector(
-                          // onTap: () {
-                          //   // Handle onTap event
-                          //   print('Text tapped!');
-                          // },
-                          child: CountDownText(
-                            due: DateTime.parse("2023-08-17 00:00:00"),
-                            finishedText: "Done",
-                            showLabel: true,
-                            longDateName: true,
-                            daysTextLong: " DAYS\n",
-                            hoursTextLong: "h ",
-                            minutesTextLong: "m ",
-                            secondsTextLong: "s",
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white,
-                              fontFamily: 'LuloClean',
-                            ),
+                      child: Column(children: [
+                        SizedBox(height: 30),
+                        CountDownText(
+                          due: DateTime.parse("2023-08-17 00:00:00"),
+                          finishedText: "Done",
+                          showLabel: true,
+                          longDateName: true,
+                          daysTextLong: "",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontFamily: 'LuloClean',
                           ),
-                          // child: Text(
-                          //   'Tickets',
-                          //   style: TextStyle(
-                          //     fontFamily: 'LuloClean',
-                          //     color: Colors.white,
-                          //   ),
-                          // ),
                         ),
-                      ),
+                        Text(
+                          'DAYS Left',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: 'LuloClean',
+                            fontSize: 12,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ]),
                     ),
                   ),
                 ],
@@ -109,7 +105,7 @@ class _CoverPage extends State<CoverPage> {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
-                  color: Color(0xFFC32B68),
+                  color: Color(pinkCode),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -135,41 +131,13 @@ class _CoverPage extends State<CoverPage> {
                       finishedText: "Done",
                       showLabel: true,
                       longDateName: true,
-                      daysTextLong: " DAYS\n",
-                      hoursTextLong: "h ",
-                      minutesTextLong: "m ",
-                      secondsTextLong: "s",
+                      daysTextLong: " DAYS LEFT",
                       style: TextStyle(
                         color: Colors.white,
                         fontFamily: 'LuloClean',
                       ),
                     ),
-
                     SizedBox(height: 10),
-                    // InkWell(
-                    //   onTap: () {
-                    //     // Add your desired onTap functionality here
-                    //   },
-                    //   child: Container(
-                    //     decoration: BoxDecoration(
-                    //       border: Border.all(
-                    //         color: Colors.white,
-                    //         width: 2.0,
-                    //       ),
-                    //       borderRadius: BorderRadius.circular(20),
-                    //     ),
-                    //     child: Padding(
-                    //       padding: EdgeInsets.all(8.0),
-                    //       child: Text(
-                    //         'Register now',
-                    //         style: TextStyle(
-                    //           fontFamily: 'LuloClean',
-                    //           color: Colors.white,
-                    //         ),
-                    //       ),
-                    //     ),
-                    //   ),
-                    // ),
                   ],
                 ),
               ),
@@ -179,50 +147,44 @@ class _CoverPage extends State<CoverPage> {
                 width: screenSize.width / 6,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
-                  color: Color(0xFF27346B),
+                  color: Color(blueCode),
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
                       padding: EdgeInsets.all(20),
                       child: Image.asset(
-                        'assets/images/stea.png',
+                        'assets/images/luna.png',
                         fit: BoxFit.cover,
                       ),
                     ),
-                    SizedBox(height: 25),
-                    Text(
-                      'News',
-                      style: TextStyle(
-                        fontFamily: 'LuloClean',
-                        color: Colors.white,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                      child: Column(
+                        children: [
+                          Text(
+                            'News',
+                            style: TextStyle(
+                              fontFamily: 'LuloClean',
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            newsText,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: textFont,
+                              color: Colors.white,
+                            ),
+                          ),
+                          SizedBox(height: 15),
+                          CustomButton(text: "Show More", function: () => {}),
+                        ],
                       ),
                     ),
-                    // SizedBox(height: 25),
-                    // InkWell(
-                    //   onTap: () {
-                    //     // Add your desired onTap functionality here
-                    //   },
-                    //   child: Container(
-                    //     decoration: BoxDecoration(
-                    //       border: Border.all(
-                    //         color: Colors.white,
-                    //         width: 2.0,
-                    //       ),
-                    //       borderRadius: BorderRadius.circular(20),
-                    //     ),
-                    //     child: Padding(
-                    //       padding: EdgeInsets.all(8.0),
-                    //       child: Text(
-                    //         'Learn More',
-                    //         style: TextStyle(
-                    //           fontFamily: 'LuloClean',
-                    //           color: Colors.white,
-                    //         ),
-                    //       ),
-                    //     ),
-                    //   ),
-                    // ),
+                    SizedBox(height: 10),
                   ],
                 ),
               ),
